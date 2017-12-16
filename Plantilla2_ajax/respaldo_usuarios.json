@@ -1,0 +1,15 @@
+{"usuarios":[
+	{"rol":"preparador","nombre":"Miguel","apellido":"Magdalena","correo":"miguelangelmagdalena@gmail.com","cedula":"25409863","contrasena":"1"},
+	{"rol":"preparador","nombre":"Jean","apellido":"García","correo":"jean@gmail.com","cedula":"1","contrasena":"1"},
+	{"rol":"preparador","nombre":"Victor","apellido":"Arica","correo":"victor@gmail.com","cedula":"2","contrasena":"1"},
+	{"rol":"preparador","nombre":"Keiber","apellido":"Prim","correo":"keiber@gmail.com","cedula":"3","contrasena":"1"},
+	{"rol":"estudiante","nombre":"koor","apellido":"pelost","correo":"koor@gmail.com","cedula":"124","contrasena":"1"},
+	{"rol":"estudiante","nombre":"nicole","apellido":"tomais","correo":"nicole@gmail.com","cedula":"125","contrasena":"1"},
+	{"rol":"estudiante","nombre":"pinocho","apellido":"tomais","correo":"pinocho@gmail.com","cedula":"126","contrasena":"1"},
+	{"rol":"estudiante","nombre":"pakur","apellido":"mair","correo":"pakur@gmail.com","cedula":"127","contrasena":"1"},
+	{"rol":"estudiante","nombre":"patip","apellido":"mair","correo":"patip@gmail.com","cedula":"128","contrasena":"1"},
+	{"rol":"estudiante","nombre":"pasdnf","apellido":"mair","correo":"pasdnf@gmail.com","cedula":"129","contrasena":"1"},
+	{"rol":"estudiante","nombre":"androxus","apellido":"paladins","correo":"androxus@gmail.com","cedula":"130","contrasena":"1"},
+	{"rol":"estudiante","nombre":"fernando","apellido":"paladins","correo":"fernando@gmail.com","cedula":"131","contrasena":"1"},
+	{"rol":"estudiante","nombre":"buck","apellido":"paladins","correo":"buck@gmail.com","cedula":"133","contrasena":"1"},
+	{"rol":"estudiante","nombre":"vivian","apellido":"paladins","correo":"vivian@gmail.com","cedula":"134","contrasena":"1"}]}

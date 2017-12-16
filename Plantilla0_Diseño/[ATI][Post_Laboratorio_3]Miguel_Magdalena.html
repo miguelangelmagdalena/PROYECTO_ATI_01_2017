@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Estilos -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="shortcut icon" href="img/icon.ico" type="image/x-icon" /> 
+
+	<!-- Javascript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="json.json"></script>
+
+	<!-- Otros -->
+	<meta charset="utf-8"> 
+	<meta charset="ISO-8859-1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>..::RedParAti</title>
+
+</head>
+<body title="body">
+	<header title="header">
+		<div class="logo" title="logo">ATI<span>[UCV]</span> 2017-01</div>
+
+	</header>
+
+	
+	<div class="containter-fluid margin-top">
+		<div class="row">
+			<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+				<div id= "content" title="content">
+					<p class= "data_title" title="data_title"></p>
+					<p class= "data_description" title="data_description"></p>
+					<div class= "data_image" title="data_image"><img class= "data_image2" title="data_image2" src="."></div>
+
+					<p class= "data_title" title="data_title"></p>
+					<p class= "data_description" title="data_description"></p>
+					<div class= "data_image" title="data_image"><img class= "data_image2" title="data_image2" src="."></div>
+
+					<p class= "data_title" title="data_title"></p>
+					<p class= "data_description" title="data_description"></p>
+					<div class= "data_image" title="data_image"><img class= "data_image2" title="data_image2" src="."></div>
+
+					<p class= "data_title" title="data_title"></p>
+					<p class= "data_description" title="data_description"></p>
+					<div class= "data_image" title="data_image"><img class= "data_image2" title="data_image2" src="."></div>
+
+					<p class= "data_title" title="data_title"></p>
+					<p class= "data_description" title="data_description"></p>
+					<div class= "data_image" title="data_image"><img class= "data_image2" title="data_image2" src="."></div>
+
+					<button id="Superbutton" type="button" title="Ver más" onclick="more_elements_callback(index_value())"> Ver más</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<script type="text/javascript">
+		var mydata = json;
+		var i;
+		var max_value = 20; //Cantidad de elementos maxima en el json 
+		var increment = 5; // valor de incremento para mostrar elementos del json
+
+		
+		for (i = 0; i <= 5; i++) { //La primera vez llenamos la estructura con los primeros 5 elementos
+			document.getElementsByClassName("data_title")[i].innerHTML 			= mydata[i].title;
+			document.getElementsByClassName("data_description")[i].innerHTML 	= mydata[i].description;
+			document.getElementsByClassName("data_image2")[i].src 				= mydata[i].url;
+			document.getElementsByClassName("data_image2")[i].title 			= mydata[i].url;
+		}
+
+		function index_value() { //Nos dice donde esta el contador
+			return i;
+		}
+
+		function hide_button(){ // Elimina el botón del dom
+			var item = document.getElementById("Superbutton");
+			item.parentNode.removeChild(item);
+		}
+		function show_button(){// Agrega de nuevo el botón
+			var item = document.createElement("button"); 
+			item.id  	= "Superbutton";
+			item.type 	= "button";
+			item.title 	="Ver más";
+			item.value  ="Ver más";
+			item.onclick= function() {
+				more_elements_callback(index_value())
+			};
+			var text = document.createTextNode("Ver más");
+			item.appendChild(text);
+
+			var element = document.getElementById("content"); //Buscamos el padre para agregarle hijos
+			element.appendChild(item);
+		}
+
+
+		
+		function more_elements_callback(index){ //Funcion para agregar 5 elementos mas despues del indice
+
+			var max = index + increment;
+
+			//Validamos que no se pase del mayor valor del json
+			if (max > max_value) {
+
+				//2. Para repetir arreglo
+				i = 0; 
+				more_elements_callback(i);
+
+			}else{
+
+				//Removemos el boton
+				hide_button();
+
+				for (i = index; i < max; i++) {
+					//Creamos data_title
+					var p1 			= document.createElement("P"); 
+					p1.className 	= "data_title";
+					p1.title 		= "data_title";
+					var text1 		= document.createTextNode(mydata[i].title); //Titulo
+					var element 	= document.getElementById("content"); //Buscamos el padre para agregarle hijos
+					p1.appendChild(text1);
+					element.appendChild(p1);
+
+					p1 = {};
+					//Creamos data_description
+					p1 				= document.createElement("P"); 
+					p1.className 	= "data_description";
+					p1.title 		= "data_description";
+					text1 			= document.createTextNode(mydata[i].description); //Descripcion
+					p1.appendChild(text1);
+					element.appendChild(p1);
+
+					p1 = {};
+					//Creamos data_image
+					p1 				= document.createElement("div"); 
+					p1.className 	= "data_image";
+					p1.title 		= "data_image";
+					element.appendChild(p1);
+
+					p1 = {};
+					//Creamos data_image2
+					p1 				= document.createElement("img"); 
+					p1.className 	= "data_image2";
+					p1.src 			= mydata[i].url; //Url de la imagen
+					p1.title 		= mydata[i].url;
+					elements 		= document.getElementsByClassName("data_image");
+					elements[elements.length-1].appendChild(p1);
+				}
+
+				//Agregamos el boton
+				show_button();
+			}
+
+		}
+	</script>
+	
+
+	<footer title="footer">
+	    Copyright © 2017 Escuela de computación - ATI. Todos los derechos reservados
+	</footer>
+
+</body>
+</html>
