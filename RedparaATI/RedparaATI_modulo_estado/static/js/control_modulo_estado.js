@@ -45,7 +45,7 @@ $(document).ready(function(){
 		//var contentTarget = $("#Superbutton").offset().top;
  		//console.log(windowHeight + "px / boton: " + contentTarget + "px");
 
-		console.log(windowHeight + "px / height: " + windowHeight2 + "px / altura " + documentHeight + "px");
+		//console.log(windowHeight + "px / height: " + windowHeight2 + "px / altura " + documentHeight + "px");
 		if((windowHeight + windowHeight2) >= documentHeight  ){
 			$("#Superbutton").click();	
 		}

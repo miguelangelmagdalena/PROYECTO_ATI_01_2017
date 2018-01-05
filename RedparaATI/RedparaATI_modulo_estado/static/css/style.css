@@ -7,12 +7,59 @@ html, body {
     max-width: 100%;
     overflow-x: hidden; /*Para escoder el scroll horizontal*/
 }
+textarea {
+    resize: none;
+}
+
 #content{
-	background-color: black;
+	background-color: white;
 	position: relative;
 	/*margin: 5%;*/
+	margin-left: 3%;
+    margin-right: 3%;
 	text-align:center;
 }
+
+#chat{
+	background-color: black;
+	position: fixed;
+	height: 100%
+	width: 100%;
+}
+
+
+/* Para publicar estados*/
+#publicar{
+	margin-top: 2%;
+	background-color: white;
+
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 0px solid #000000;
+}
+.shadow {
+   -moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+   box-shadow:         inset 0 0 10px #000000;
+}
+.form-control{
+	height: 100px !important;
+	width: 98% !important;
+	margin: 1% !important;
+}
+.titulo{
+	text-align: left;
+	font-size: 18px;
+    color: rgb(13, 70, 163);
+    font-weight: 600;
+    padding-left: 10px;
+}
+.escribir{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
 
 .data_title{
 	background-color: #2EFEF7;
@@ -119,8 +166,9 @@ footer {
 
 }
 
+
 .margin-top{
-	margin-top: 48px;
+	margin-top: 65px;
 }
 
 .margin-bottom{
