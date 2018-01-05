@@ -1,0 +1,128 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: Verdana, Arial, helvetica, sans-serif;
+}
+html, body { 
+    max-width: 100%;
+    overflow-x: hidden; /*Para escoder el scroll horizontal*/
+}
+#content{
+	background-color: black;
+	position: relative;
+	/*margin: 5%;*/
+	text-align:center;
+}
+
+.data_title{
+	background-color: #2EFEF7;
+	margin-left:  5%;
+	margin-right: 5%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	border-radius: 15px 50px;
+    padding: 20px;
+    
+}
+
+.data_description{
+	background-color: #58FAAC;
+	margin-left:  5%;
+	margin-right: 5%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	border-radius: 15px 50px;
+    padding: 20px;
+}
+.data_image{
+	//background-color: #DA81F5;
+	margin-left:  5%;
+	margin-right: 5%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	background-size: 100% auto;
+	
+}
+
+.data_image2{
+	width: 100%;
+	height: auto;
+	border-radius: 50%;
+}
+
+
+header {
+	width: 100%;
+	position: fixed;
+	z-index: 1;
+    height: 62px;
+	background-color:#86b1ef;	
+	top: 0;
+}
+header nav {
+	position: absolute;
+	top:20px;
+	right:20px;
+}
+
+.logo {
+    color: white;
+	margin-left: 15px;
+    font-size: 2.5em;
+    line-height: 58px;
+    font-family: helvetica;
+}
+.logo span {
+	font-size: 17pt;
+}
+footer {
+  width: 100%;
+  position: relative;	
+  bottom: 0;
+  padding: 1rem;
+  background-color: #86b1ef;
+  text-align: center;
+  height: 50px;	
+  font-size: 0.9em;
+}
+
+#Superbutton {
+	float: center;
+
+	background-color: green; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 50%;
+    width: 50%;
+
+   
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+#Superbutton:hover {
+    background-color: white; 
+    border: none;
+    color: orange;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 50%;
+    width: 50%;
+
+
+}
+
+.margin-top{
+	margin-top: 48px;
+}
+
+.margin-bottom{
+	margin-bottom: 50px;
+}
