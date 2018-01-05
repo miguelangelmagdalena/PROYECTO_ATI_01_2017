@@ -5,8 +5,16 @@ Platillas para trabajar con el proyecto de ati RedParAti, en plantilla0 esta el 
 
 ## Para ver la pagina con Github Pages
 
-Bueno estoy probando esto, pero debería ser aqui 
-* https://musthagon.github.io/PROYECTO_ATI_01_2017/Plantilla0_Dise%C3%B1o/
+Aqui va a ser la pagina de estado:
+* https://musthagon.github.io/PROYECTO_ATI_01_2017/RedparaATI/RedparaATI_modulo_estado/templates/
+- [x] Ya esta el javascript separado del html
+- [x] Al bajar el scroll hasta el final de la pagina se cargan mas elementos del json
+- [] Hacer div publicar
+- [] Hacer div de publicaciones1
+- [] Hacer div de publicaciones2
+- [] Hacer div de publicaciones3
+- [] Hacer div de publicaciones4
+- [] Cambiar colores
 
 ## Cosas que hay que hacer:
 - [x] Link Trello https://trello.com/b/ABPfB7iL/backlog-m%C3%B3dulo-estado :smile:
