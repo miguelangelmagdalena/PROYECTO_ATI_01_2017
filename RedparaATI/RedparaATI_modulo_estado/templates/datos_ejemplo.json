@@ -1,4 +1,4 @@
-json = [
+mydata = [
   {
     "id" : 1,
     "title" : "1: Dolor sit",

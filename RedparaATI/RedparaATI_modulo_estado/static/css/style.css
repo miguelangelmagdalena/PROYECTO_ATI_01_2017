@@ -13,12 +13,7 @@ html, body {
 	/*margin: 5%;*/
 	text-align:center;
 }
-#content:hover{
-	background-color: orange;
-	position: relative;
-	/*margin: 5%;*/
-	text-align:center;
-}
+
 .data_title{
 	background-color: #2EFEF7;
 	margin-left:  5%;
@@ -29,16 +24,7 @@ html, body {
     padding: 20px;
     
 }
-.data_title:hover{
-	background-color: green;
-	margin-left:  5%;
-	margin-right: 5%;
-	margin-top: 1%;
-	margin-bottom: 1%;
-	border-radius: 15px 50px;
-    padding: 20px;
 
-}
 .data_description{
 	background-color: #58FAAC;
 	margin-left:  5%;
@@ -47,16 +33,6 @@ html, body {
 	margin-bottom: 1%;
 	border-radius: 15px 50px;
     padding: 20px;
-}
-.data_description:hover{
-	background-color: green;
-	margin-left:  5%;
-	margin-right: 5%;
-	margin-top: 1%;
-	margin-bottom: 1%;
-	border-radius: 15px 50px;
-    padding: 20px;
-	
 }
 .data_image{
 	//background-color: #DA81F5;
@@ -67,26 +43,13 @@ html, body {
 	background-size: 100% auto;
 	
 }
-.data_image:hover{
-	background-color: green;
-	margin-left:  5%;
-	margin-right: 5%;
-	margin-top: 1%;
-	margin-bottom: 1%;
-	background-size: 100% auto;
-	
-}
+
 .data_image2{
 	width: 100%;
 	height: auto;
 	border-radius: 50%;
 }
-.data_image2:hover{
-	background-color: green;
-	width: 100%;
-	height: auto;
-	border-radius: 50%;
-}
+
 
 header {
 	width: 100%;

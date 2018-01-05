@@ -23,3 +23,7 @@ Todavía no lo he puesto en github pages
 ## Guias y documentos
 Estructura de carpetas para proyectos grandes en python - flask
 * http://flask.pocoo.org/docs/0.12/patterns/packages/
+
+Como hacer interacctuar con los eventos del scroll con Jquery
+* https://desarrollofrontend.com/scrolltop-mostrar-un-elemento-al-llegar-a-otro/
+* http://blog.reaccionestudio.com/como-usar-el-evento-scroll-de-jquery/
