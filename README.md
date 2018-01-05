@@ -9,12 +9,14 @@ Aqui va a ser la pagina de estado:
 * https://musthagon.github.io/PROYECTO_ATI_01_2017/RedparaATI/RedparaATI_modulo_estado/templates/
 - [x] Ya esta el javascript separado del html
 - [x] Al bajar el scroll hasta el final de la pagina se cargan mas elementos del json
-- [] Hacer div publicar
-- [] Hacer div de publicaciones1
-- [] Hacer div de publicaciones2
-- [] Hacer div de publicaciones3
-- [] Hacer div de publicaciones4
-- [] Cambiar colores
+- [ ] Hacer div publicar
+- [ ] Hacer div de publicaciones1
+- [ ] Hacer div de publicaciones2
+- [ ] Hacer div de publicaciones3
+- [ ] Hacer div de publicaciones4
+- [ ] Hacer div del chat
+- [ ] Acomodar el header
+- [ ] Cambiar colores
 
 ## Cosas que hay que hacer:
 - [x] Link Trello https://trello.com/b/ABPfB7iL/backlog-m%C3%B3dulo-estado :smile:
