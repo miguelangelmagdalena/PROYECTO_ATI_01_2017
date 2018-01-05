@@ -13,7 +13,7 @@ Todavía no lo he puesto en github pages
 ![alt text](/ATIDiagramaClasesModeloDatos.jpg "Modelo de datos")
 	
 ## Modelo de Navegación
-![alt text](ATIProyectoModNav.jpg "Modelo de datos")
+![alt text](/ATIProyectoModNav.jpg "Modelo de navegación")
 
 ## :warning: Pendiente:
 * Activar Javascript
@@ -22,4 +22,4 @@ Todavía no lo he puesto en github pages
 
 ## Guias y documentos
 Estructura de carpetas para proyectos grandes en python - flask
-*http://flask.pocoo.org/docs/0.12/patterns/packages/
+* http://flask.pocoo.org/docs/0.12/patterns/packages/
