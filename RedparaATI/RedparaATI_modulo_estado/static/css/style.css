@@ -23,14 +23,15 @@ textarea {
 #chat{
 	background-color: black;
 	position: fixed;
-	height: 100%
+	height: 100%;
 	width: 100%;
 }
 
 
 /* Para publicar estados*/
 #publicar{
-	margin-top: 2%;
+	/*margin-top: 2%;*/
+	padding: 6px;
 	background-color: white;
 
 	border-radius: 10px 10px 10px 10px;
@@ -39,11 +40,11 @@ textarea {
 	border: 0px solid #000000;
 }
 .shadow {
-   -moz-box-shadow:    inset 0 0 10px #000000;
-   -webkit-box-shadow: inset 0 0 10px #000000;
-   box-shadow:         inset 0 0 10px #000000;
+   -moz-box-shadow:    inset 0px 0px 5px 0px #000000;
+   -webkit-box-shadow: inset 0px 0px 5px 0px #000000;
+   box-shadow:         inset 0px 0px 5px 0px #000000;
 }
-.form-control{
+.form-control2{
 	height: 100px !important;
 	width: 98% !important;
 	margin: 1% !important;
@@ -54,6 +55,21 @@ textarea {
     color: rgb(13, 70, 163);
     font-weight: 600;
     padding-left: 10px;
+}
+.icon-publicar{
+	height: 50px;
+	width: 50px;
+}
+#tipo_publicacion{
+	width: 150px;
+	display: initial;
+}
+.tabla{
+	width: 50%;
+	display: inline-grid;
+}
+.tabla2{
+	text-align: right;
 }
 .escribir{
 	margin-top: 5px;
