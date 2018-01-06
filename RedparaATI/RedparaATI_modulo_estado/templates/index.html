@@ -5,7 +5,7 @@
 	<link rel="stylesheet" href ="../static/css/style.css">
 	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="shortcut icon" href="img/icon.ico" type="image/x-icon" /> 
+	<link rel="shortcut icon" href="../static/images/icon.ico" type="image/x-icon" /> 
 	
 	<!-- scripts -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -29,12 +29,55 @@
 	
 	<div class="containter-fluid margin-top">
 		<div class="row">
+
 			<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
 				<div id= "content" title="content">
-					
+					<div id="publicar" class="shadow">
+						<div class="form-group">
+							<div class="titulo">Publicar:</div>
+							<textarea class="escribir form-control form-control2" placeholder="Escribe aqui tu estado..."></textarea> 
+							<div>
+								<div class="tabla">
+									<table class="tabla2">
+										<tr>
+											<td><img class="icon-publicar" src="../static/images/icon-image.png"></td>
+											<td><img class="icon-publicar" src="../static/images/icon-audio-file.png"></td>
+											<td><img class="icon-publicar" src="../static/images/icon-video-file.png"></td>
+											<td><img class="icon-publicar" src="../static/images/icon-enlace.png"></td>
+											<td><img class="icon-publicar" src="../static/images/icon-emoji.png"></td>
+										</tr>
+										<tr>
+											<td> <p>Imagen</p> </td>
+											<td> <p>Audio</p> </td>
+											<td> <p>Video</p> </td>
+											<td> <p>Enlace</p> </td>
+											<td> <p>Emoji</p> </td>
+										</tr>
+										
+								  </table>
+								</div>
+								
+								<select class="form-control" id="tipo_publicacion">
+									<option>Solo amigos</option>
+									<option>Público</option>
+									<option>Solo yo</option>
+								</select>
+							 	<button type="submit" class="btn btn-primary">Publicar</button>
+							</div>
+							
+						</div>
+						
+					</div>
+
 					<!-- Aqui se agregará la información dinamicamente -->
 
 					<button id="Superbutton" type="button" title="Ver más" > Ver más</button>
+				</div>
+			</div>
+
+			<div class="hidden-xs col-sm-3 col-md-3 col-lg-3">
+				<div id="chat">
+					
 				</div>
 			</div>
 		</div>
