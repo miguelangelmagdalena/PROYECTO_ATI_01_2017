@@ -113,12 +113,8 @@ a {
     font-weight: 600;
     padding-left: 10px;
 }
-#tipo_publicacion{
-	width: 20%;
-	display: initial;
-}
-#button_publicar{
-	width: 20%;
+.publicar_menu{
+
 }
 .tabla2 {
     table-layout:fixed;
@@ -142,7 +138,30 @@ a {
 	margin-top: 5px;
 	margin-bottom: 5px;
 }
-
+#tipo_publicacion{
+	width: 20%;
+	display: initial;
+}
+#button_publicar{
+	width: 20%;
+}
+@media only screen and (max-width: 599px) {
+	#tipo_publicacion{
+		width: 49% !important;
+		float: left;
+		margin-right: 1%;
+	}
+	#button_publicar{
+		width: 50% !important;
+	}
+	.publicar_opciones{
+		width: 100% !important;
+		margin: 0px auto;
+	}
+	.publicar_opciones2{
+		/*margin: 0px auto;*/
+	}
+}
 
 /**************Estructura de las publicaciones ***********/
 .publicacion{
@@ -216,8 +235,8 @@ a {
 	font-size: .8em;
 }
 .publicacion_barra_opciones2{
-	width: 60%;
-	height: 100%
+	width: 70%;
+	/*height: 100%*/
 }
 .publicacion_barra_opciones_font{
 	font-size: .8em;
@@ -232,6 +251,57 @@ a {
 	border:none;
     background-color: transparent;
 }
+
+@media only screen and (max-width: 1100px) {
+	.fecha1, .fecha2{
+		margin-top: 2%;
+		margin-bottom: 2%;
+	}
+	.fecha1{
+		width: 20% !important;
+	}
+	.fecha2{
+		width: 30% !important;
+	}
+    .publicacion_barra_opciones2{
+		width: 100% !important;
+	}
+}
+@media only screen and (max-width: 599px) {
+	.fecha1{
+		width: 40% !important;
+	}
+	.fecha2{
+		width: 60% !important;
+	}
+	.publicacion_barra_opciones2{
+		overflow-x:auto !important;
+	}
+}
+@media only screen and (max-width: 479px) {
+	.publicacion_barra_opciones_font{
+		font-size: .6em !important;
+	}
+}
+@media only screen and (max-width: 350px) {
+	.publicacion_barra_opciones{
+		height: 90px !important;
+	}
+	
+}
+/**************Estructura de los comentarios********************/
+.seccion_comentarios{
+	background-color: #E1F5F3;
+	margin-bottom: 2%;
+}
+.titulo2{
+	text-align: left;
+    font-size: 15px;
+    color: rgb(13, 70, 163);
+    font-weight: 600;
+    padding-left: 10px;
+}
+
 
 
 
