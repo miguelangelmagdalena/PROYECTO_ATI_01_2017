@@ -48,6 +48,9 @@ footer {
   height: 50px;	
   font-size: 0.9em;
 }
+a {
+	text-decoration: none !important;
+}
 
 #content{
 	position: relative;
@@ -80,15 +83,24 @@ footer {
 
 /*********** Para publicar estados*********/
 #publicar{
-	/*margin-top: 2%;*/
+	margin-top: 2.5%;
 	padding: 6px;
 	background-color: white;
 }
-.shadow {
+/*.shadow {
    -moz-box-shadow:    inset 0px 0px 5px 0px #000000;
    -webkit-box-shadow: inset 0px 0px 5px 0px #000000;
    box-shadow:         inset 0px 0px 5px 0px #000000;
+}*/
+
+.shadow
+{
+    position:relative;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
+
 .form-control2{
 	height: 100px !important;
 	width: 98% !important;
@@ -134,7 +146,7 @@ footer {
 
 /**************Estructura de las publicaciones ***********/
 .publicacion{
-	margin-top: 1%;
+	margin-top: 2.5%;
 	padding: 6px;
 	background-color: white;
 }
@@ -167,10 +179,20 @@ footer {
 .publicacion_nombre2{
     vertical-align: middle;
 }
-.publicacion_submenu_control{
-	vertical-align: middle;
+.publicacion_submenu_control_button{
+	border:none;
+    background-color: transparent;
+    vertical-align: middle;
 	float: right;
-    margin-right: 3%;
+    /*margin-right: 3%;*/
+    margin-top: 0px;
+    width: 35px;
+    height: 80px;
+}
+.publicacion_submenu_control{
+	
+
+    
 }
 .publicacion_texto{
 	width: 100%;
@@ -182,14 +204,19 @@ footer {
 	width: 100%;
 }
 .publicacion_barra_opciones{
-	height: 70px;
+	height: 58px;
 	margin-top: 1%;
 }
 .fecha1{
-	width: 15%;
+	width: 10%;
+	font-size: .8em;
+}
+.fecha2{
+	width: 20%;
+	font-size: .8em;
 }
 .publicacion_barra_opciones2{
-	width: 80%;
+	width: 60%;
 	height: 100%
 }
 .publicacion_barra_opciones_font{
@@ -201,7 +228,10 @@ footer {
 	width: 1.125em;
 }
 
-
+.publicacion_opciones_button{
+	border:none;
+    background-color: transparent;
+}
 
 
 
