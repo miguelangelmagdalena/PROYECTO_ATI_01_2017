@@ -1,6 +1,6 @@
 $(document).ready(function(){//Cuando cargan todos los elementos del DOM
 
-	//Mostramos la información dinamicamente desde el json
+	//1. Mostramos la información dinamicamente desde el json
 	var i = 0;			//Valor Inicial
 	var max_value = 20; //Cantidad de elementos maxima en el json 
 	var increment = 2;	//Cantidad de elementos a mostrar hasta llegar al maximo
@@ -22,7 +22,10 @@ $(document).ready(function(){//Cuando cargan todos los elementos del DOM
 
 });
 
+
 /*****************OTRAS FUNCIONES********************************/
+
+
 function hide_button(){ // Elimina el botón de carga de mas publicaciones del DOM
 
 	var item = document.getElementById("Superbutton");
@@ -31,6 +34,7 @@ function hide_button(){ // Elimina el botón de carga de mas publicaciones del D
 	//Lo mismo pero con jquery
 	//$("#Superbutton").remove();
 }
+
 function show_button(index,increment,max_value){// Agrega de nuevo el botón de carga de mas publicaciones al final de las publicaciones
 	
 	//1. Creamos el boton

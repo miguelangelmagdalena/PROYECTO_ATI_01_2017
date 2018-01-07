@@ -2,17 +2,54 @@
 	margin: 0;
 	padding: 0;
 	font-family: Verdana, Arial, helvetica, sans-serif;
+
 }
 html, body { 
     max-width: 100%;
     overflow-x: hidden; /*Para escoder el scroll horizontal*/
 }
+body {
+	background-color: #e9ebee !important;
+}
 textarea {
     resize: none;
 }
+header {
+	width: 100%;
+	position: fixed;
+	z-index: 1;
+    height: 62px;
+	background-color:#86b1ef;	
+	top: 0;
+}
+header nav {
+	position: absolute;
+	top:20px;
+	right:20px;
+}
+
+.logo {
+    color: white;
+	margin-left: 15px;
+    font-size: 2.5em;
+    line-height: 58px;
+    font-family: helvetica;
+}
+.logo span {
+	font-size: 17pt;
+}
+footer {
+  width: 100%;
+  position: relative;	
+  bottom: 0;
+  padding: 1rem;
+  background-color: #86b1ef;
+  text-align: center;
+  height: 50px;	
+  font-size: 0.9em;
+}
 
 #content{
-	background-color: white;
 	position: relative;
 	/*margin: 5%;*/
 	margin-left: 3%;
@@ -20,24 +57,32 @@ textarea {
 	text-align:center;
 }
 
-#chat{
-	background-color: black;
-	position: fixed;
-	height: 100%;
-	width: 100%;
+.margin-top{
+	margin-top: 65px;
 }
 
+.margin-bottom{
+	margin-bottom: 50px;
+}
+
+.border_radius{
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 0px solid #000000;
+}
+.flotar_izquierda{
+	float: left;
+}
+.flotar_derecha{
+	float: right;
+}
 
 /*********** Para publicar estados*********/
 #publicar{
 	/*margin-top: 2%;*/
 	padding: 6px;
 	background-color: white;
-
-	border-radius: 10px 10px 10px 10px;
-	-moz-border-radius: 10px 10px 10px 10px;
-	-webkit-border-radius: 10px 10px 10px 10px;
-	border: 0px solid #000000;
 }
 .shadow {
    -moz-box-shadow:    inset 0px 0px 5px 0px #000000;
@@ -56,10 +101,6 @@ textarea {
     font-weight: 600;
     padding-left: 10px;
 }
-.icon-publicar{
-	height: 3.125em;
-	width: 3.125em;
-}
 #tipo_publicacion{
 	width: 20%;
 	display: initial;
@@ -67,15 +108,17 @@ textarea {
 #button_publicar{
 	width: 20%;
 }
-table {
-    table-layout: auto;
+.tabla2 {
+    /*table-layout: auto;*/
+    table-layout:fixed;
+	width: 100%;
     border-collapse: collapse;
     width: 100%;
 }
-table td {
+.tabla2 td {
     border: 1px solid #ccc;
 }
-table .absorbing-column {
+.tabla2 .absorbing-column {
     width: 100%;
 }
 .tabla{
@@ -86,6 +129,10 @@ table .absorbing-column {
 	width: 100%;
     height: 100%;*/
 }
+.icon-publicar{
+	height: 3.125em;
+	width: 3.125em;
+}
 .mitad-50{
 	width: 50%;
 }
@@ -95,9 +142,83 @@ table .absorbing-column {
 }
 
 
-
-
 /**************Estructura de las publicaciones ***********/
+.publicacion{
+	margin-top: 1%;
+	padding: 6px;
+	background-color: white;
+}
+.publicacion2{
+	margin-left: 1%;
+	margin-right: 1%;
+	margin-top: 1%;
+}
+.publicacion_barra_nombre{
+	height: 80px;
+}
+.publicacion_foto_miniatura{
+	width: 80px;
+	height: 80px;
+	
+
+	display: initial;
+	float: left;
+
+	border-radius: 200px 200px 200px 200px;
+	-moz-border-radius: 200px 200px 200px 200px;
+	-webkit-border-radius: 200px 200px 200px 200px;
+	border: 0px solid #000000;
+}
+.publicacion_nombre{
+	height: 100%;
+	position: relative;
+	float: left;
+}
+.publicacion_nombre2{
+    vertical-align: middle;
+}
+.publicacion_submenu_control{
+	vertical-align: middle;
+	float: right;
+    margin-right: 3%;
+}
+.publicacion_texto{
+	width: 100%;
+	display: inline-flex;
+	text-align: justify;
+    text-justify: inter-word;
+}
+.publicacion_multimedia2{
+	width: 100%;
+}
+.publicacion_barra_opciones{
+	height: 70px;
+	margin-top: 1%;
+}
+.fecha1{
+	width: 15%;
+}
+.publicacion_barra_opciones2{
+	width: 80%;
+	height: 100%
+}
+.publicacion_barra_opciones_font{
+	font-size: 1em;
+}
+.publicacion_icon{
+	height: 1.125em;
+	width: 1.125em;
+}
+
+
+
+
+
+
+
+
+
+
 .data_title{
 	background-color: #2EFEF7;
 	margin-left:  5%;
@@ -135,40 +256,7 @@ table .absorbing-column {
 }
 
 
-header {
-	width: 100%;
-	position: fixed;
-	z-index: 1;
-    height: 62px;
-	background-color:#86b1ef;	
-	top: 0;
-}
-header nav {
-	position: absolute;
-	top:20px;
-	right:20px;
-}
 
-.logo {
-    color: white;
-	margin-left: 15px;
-    font-size: 2.5em;
-    line-height: 58px;
-    font-family: helvetica;
-}
-.logo span {
-	font-size: 17pt;
-}
-footer {
-  width: 100%;
-  position: relative;	
-  bottom: 0;
-  padding: 1rem;
-  background-color: #86b1ef;
-  text-align: center;
-  height: 50px;	
-  font-size: 0.9em;
-}
 
 #Superbutton {
 	float: center;
@@ -204,10 +292,11 @@ footer {
 }
 
 
-.margin-top{
-	margin-top: 65px;
+/************Seccion de Chat************************/
+#chat{
+	background-color: black;
+	position: fixed;
+	height: 100%;
+	width: 100%;
 }
 
-.margin-bottom{
-	margin-bottom: 50px;
-}
