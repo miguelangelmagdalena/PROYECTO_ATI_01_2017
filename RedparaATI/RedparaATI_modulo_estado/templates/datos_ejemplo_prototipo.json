@@ -3,15 +3,49 @@ mydata = [
     "id" : 1,
     "fecha_creacion" :      "2012-04-23T18:25:43.511Z",
     "fecha_modificacion" :  "2012-04-28T18:25:43.511Z",
+    "nombre_usuario" : "Daniela Pereira",
+    "foto_perfil" : "https://cdn.expansion.mx/dims4/default/d32645f/2147483647/crop/1200x675%2B0%2B201/resize/800x450%5E/quality/75/?url=https%3A%2F%2Fcdn.expansion.mx%2F3c%2F4e%2Faa8f296d479b8b3cbac398f1e020%2Feso-poster1.jpg",
     "texto" : "Hola como estas?",
     "multimedia_url" : "https://cdn.expansion.mx/dims4/default/d32645f/2147483647/crop/1200x675%2B0%2B201/resize/800x450%5E/quality/75/?url=https%3A%2F%2Fcdn.expansion.mx%2F3c%2F4e%2Faa8f296d479b8b3cbac398f1e020%2Feso-poster1.jpg",
     "tipo_multimedia" : "jpg",
-    "acum_calificaciones_ortografia" : 20,
-    "cant_calificaciones_ortografia" : [10,10],
     "cant_like" : 20,
     "cant_dislike" : 5,
+    "acum_calificaciones_ortografia" : 20,
+    "cant_calificaciones_ortografia" : [10,10],
     "cant_visualizaciones" : 40,
-    "privacidad" : "Público"
+    "privacidad" : "Público",
+    "comentarios" : [
+      {
+        "id" : 1,
+        "id_comentario_principal": -1,
+        "fecha_creacion": "2012-04-28T18:25:43.511Z",
+        "nombre_usuario" : "Daniela Pereira",
+        "foto_perfil" : "https://cdn.expansion.mx/dims4/default/d32645f/2147483647/crop/1200x675%2B0%2B201/resize/800x450%5E/quality/75/?url=https%3A%2F%2Fcdn.expansion.mx%2F3c%2F4e%2Faa8f296d479b8b3cbac398f1e020%2Feso-poster1.jpg",
+        "cant_like" : 20,
+        "cant_dislike" : 5,
+        "texto": "Muy bien!"
+      },
+      {
+        "id" : 2,
+        "id_comentario_principal": 1,
+        "fecha_creacion": "2012-04-28T18:25:43.511Z",
+        "nombre_usuario" : "Daniela Pereira",
+        "foto_perfil" : "https://cdn.expansion.mx/dims4/default/d32645f/2147483647/crop/1200x675%2B0%2B201/resize/800x450%5E/quality/75/?url=https%3A%2F%2Fcdn.expansion.mx%2F3c%2F4e%2Faa8f296d479b8b3cbac398f1e020%2Feso-poster1.jpg",
+        "cant_like" : 20,
+        "cant_dislike" : 5,
+        "texto": "Eso es mentira"
+      },
+      {
+        "id" : 3,
+        "id_comentario_principal": -1,
+        "fecha_creacion": "2012-04-28T18:25:43.511Z",
+        "nombre_usuario" : "Daniela Pereira",
+        "foto_perfil" : "https://cdn.expansion.mx/dims4/default/d32645f/2147483647/crop/1200x675%2B0%2B201/resize/800x450%5E/quality/75/?url=https%3A%2F%2Fcdn.expansion.mx%2F3c%2F4e%2Faa8f296d479b8b3cbac398f1e020%2Feso-poster1.jpg",
+        "cant_like" : 20,
+        "cant_dislike" : 5,
+        "texto": "Muy bien tambien!"
+      }
+    ]
   },
   {
     "id" : 1,
