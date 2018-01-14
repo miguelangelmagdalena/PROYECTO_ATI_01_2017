@@ -73,13 +73,6 @@ function more_elements_callback(index,increment,max_value){ //Funcion para agreg
 		hide_button();
 
 		for (i = index; i < max; i++) {
-
-			/*var publicacion = 	"<p class='data_title' title='data_title'>"+mydata[i].title+"</p>";
-			publicacion += 		"<p class='data_description' title='data_description'>"+mydata[i].description+"</p>";
-			publicacion += 		"<div class='data_image' title='data_image'><img class='data_image2' title='"+mydata[i].url+"' src='"+mydata[i].url+"'></img></div>";
-			*/
-
-
 			
 			var publicacion = "	<div class='publicacion shadow border_radius'>";
 			publicacion +=			"<div class='publicacion2'>";
@@ -204,53 +197,6 @@ function more_elements_callback(index,increment,max_value){ //Funcion para agreg
 
 			$(publicacion).appendTo("#content");
 
-
-
-			//$("<div>Hola </div>").appendTo("#comentario");
-
-
-			//publicacion += 				"<div id='comentario'></div>";
-			//$("#comentario").html("<div>Hola </div>");
-			//$("#comentario").attr("id","");
-
-
-
-
-			/*
-			//Creamos data_title
-			var p1 			= document.createElement("P"); 
-			p1.className 	= "data_title";
-			p1.title 		= "data_title";
-			var text1 		= document.createTextNode(mydata[i].title); //Titulo
-			var element 	= document.getElementById("content"); //Buscamos el padre para agregarle hijos
-			p1.appendChild(text1);
-			element.appendChild(p1);
-
-			p1 = {};
-			//Creamos data_description
-			p1 				= document.createElement("P"); 
-			p1.className 	= "data_description";
-			p1.title 		= "data_description";
-			text1 			= document.createTextNode(mydata[i].description); //Descripcion
-			p1.appendChild(text1);
-			element.appendChild(p1);
-
-			p1 = {};
-			//Creamos data_image
-			p1 				= document.createElement("div"); 
-			p1.className 	= "data_image";
-			p1.title 		= "data_image";
-			element.appendChild(p1);
-
-			p1 = {};
-			//Creamos data_image2
-			p1 				= document.createElement("img"); 
-			p1.className 	= "data_image2";
-			p1.src 			= mydata[i].url; //Url de la imagen
-			p1.title 		= mydata[i].url;
-			elements 		= document.getElementsByClassName("data_image");
-			elements[elements.length-1].appendChild(p1); 
-			*/
 		}
 
 		//Agregamos el boton

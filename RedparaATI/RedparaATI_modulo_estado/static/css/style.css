@@ -84,8 +84,17 @@ a {
 /*********** Para publicar estados*********/
 #publicar{
 	margin-top: 2.5%;
+	margin-bottom: 2.5%;
 	padding: 6px;
 	background-color: white;
+	overflow: hidden;
+}
+.publicar2{
+	margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    overflow: hidden;
 }
 /*.shadow {
    -moz-box-shadow:    inset 0px 0px 5px 0px #000000;
@@ -165,7 +174,7 @@ a {
 
 /**************Estructura de las publicaciones ***********/
 .publicacion{
-	margin-top: 2.5%;
+	margin-bottom: 2.5%;
 	padding: 6px;
 	background-color: white;
 }
@@ -424,9 +433,25 @@ a {
 
 
 #Superbutton {
+	margin-bottom: 1%;
 	float: center;
 
-	background-color: green; 
+	background-color: #D3D3D3; 
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 50%;
+    /*width: 50%;*/
+
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+#Superbutton:hover, #Superbutton:active {
+    background-color: #337ab7; 
     border: none;
     color: white;
     padding: 15px 32px;
@@ -435,26 +460,9 @@ a {
     display: inline-block;
     font-size: 16px;
     border-radius: 50%;
-    width: 50%;
-
-   
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
+   	/*width: 50%;*/
 }
-#Superbutton:hover {
-    background-color: white; 
-    border: none;
-    color: orange;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 50%;
-    width: 50%;
 
-
-}
 
 
 /************Seccion de Chat************************/
