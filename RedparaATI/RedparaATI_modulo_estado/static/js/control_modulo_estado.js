@@ -77,15 +77,15 @@ function more_elements_callback(index,increment,max_value){ //Funcion para agreg
 			var publicacion = "	<div class='publicacion shadow border_radius'>";
 			publicacion +=			"<div class='publicacion2'>";
 			publicacion +=				"<div class='publicacion_barra_nombre'>";				
-			publicacion +=					"<a href=''>";
+			publicacion +=					"<a href='#'>";
 			publicacion +=						"<img class='publicacion_foto_miniatura' src='"+mydata[i].foto_perfil+"'> ";
 			publicacion +=					"</a>";
 			publicacion +=					"<div class='publicacion_nombre '>";
-			publicacion +=						"<a href=''>"
+			publicacion +=						"<a href='#'>"
 			publicacion +=							"<h2 class='publicacion_nombre2 titulo'>"+mydata[i].nombre_usuario+"</h2>";
 			publicacion +=						"</a>";					
 			publicacion +=					"</div>";
-			publicacion +=					"<button href='' class='publicacion_submenu_control_button'>";
+			publicacion +=					"<button href='#' class='publicacion_submenu_control_button'>";
 			publicacion +=						"<h2 class='publicacion_submenu_control titulo'>☰</h2>";
 			publicacion +=					"</button>";
 			publicacion +=				"</div>";
@@ -94,7 +94,7 @@ function more_elements_callback(index,increment,max_value){ //Funcion para agreg
 			publicacion +=						mydata[i].texto;
 			publicacion +=					"</p>";
 			publicacion +=					"<div class='publicacion_multimedia'>";
-			publicacion +=						"<a href=''>";
+			publicacion +=						"<a href='#'>";
 			publicacion +=							"<img class='publicacion_multimedia2' src='"+mydata[i].multimedia_url+"'>";
 			publicacion +=						"</a>";
 			publicacion +=					"</div>";
@@ -148,11 +148,11 @@ function more_elements_callback(index,increment,max_value){ //Funcion para agreg
 					
 					comentarios +=				"<div class='seccion_comentarios2 "+aux1+"'>";
 					comentarios +=					"<div class='publicacion_barra_nombre'>";				
-					comentarios +=						"<a href=''>";
+					comentarios +=						"<a href='#'>";
 					comentarios +=							"<img class='publicacion_foto_miniatura "+aux2+"' src='"+mydata[i].comentarios[j].foto_perfil+"'> ";
 					comentarios +=						"</a>";
 					comentarios +=						"<div class='publicacion_nombre '>";
-					comentarios +=							"<a href=''>";
+					comentarios +=							"<a href='#'>";
 					comentarios +=								"<h2 class='publicacion_nombre2 titulo2'>"+mydata[i].comentarios[j].nombre_usuario+"</h2>";
 					comentarios +=							"</a>";
 					comentarios +=						"</div>";
