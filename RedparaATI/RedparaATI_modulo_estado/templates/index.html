@@ -13,6 +13,19 @@
 	<script src="../static/js/control_modulo_estado.js"></script> 
 	<script type="text/javascript" src="datos_ejemplo_prototipo.json"></script> <!--Data de publicaciones -->
 	
+
+
+	
+	<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/style_navegation_bar.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/style_base_container.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/style_lateral_chat.css">
+
+	<script type="text/javascript" src="../static/js/jquery.js"></script>
+	<script type="text/javascript" src="../static/js/bootstrap.js"></script>
+
+
+
 	<!-- Otros -->
 	<meta charset="utf-8"> 
 	<meta charset="ISO-8859-1">
@@ -22,17 +35,23 @@
 
 </head>
 <body>
-	<header>
-		<div class="logo">ATI<span>[UCV]</span> 2017-01</div>
 
-	</header>
+
+	<div class="navegation_bar">
+  	
+		<script type="text/javascript">
+			$(".navegation_bar").load("navbar.html");
+		</script>
+
+  	</div>
 
 	
-	<div class="containter-fluid margin-top">
+	<!--<div class="containter-fluid margin-top">-->
+	<div class="containter">
 		<div class="row">
 
-			<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
-				<div id= "content">
+			<div class="col-xs-12 col-sm-7 col-md-8">
+				<div id= "content" style="overflow-y: scroll;">
 					
 					<!-- ****SECCION DE PUBLICAR**** -->
 					
@@ -49,8 +68,8 @@
 
 							<div class="publicar_upload">
 								<ul class="social-network social-circle">
-                  <li><a href="index.html" class="icoUpload" title="Subir multimedia"><i class="fa fa-upload" aria-hidden="true"></i></a></li>
-                </ul>
+				                  <li><a href="index.html" class="icoUpload" title="Subir multimedia"><i class="fa fa-upload" aria-hidden="true"></i></a></li>
+				                </ul>
 							</div>
 						</div>
 
@@ -85,9 +104,27 @@
 				</div>
 			</div>
 
-			<div class="hidden-xs col-sm-3 col-md-3 col-lg-3">
-				<div id="chat">
-					
+			<div class="hidden-xs col-sm-5 col-md-4">
+				<!--BARRA CHAT-->
+			
+				<div class="right_chat_module ">
+
+					<div class="container_search">
+						<img src="img/search.png" width="30px;" id="search_img">
+						<input type="text" name="buscador_amigos" id="buscador_amigos" placeholder=" Buscar amigo ">
+						<button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-send"></span></button>
+					</div>
+
+					<div class="container_lista_amigos scroll-bar-style">
+
+						<!--SCRIPT TEMPORAL SOLO PARA EL PROTOTIPO FASE1-->
+						<script type="text/javascript">
+							$(".container_lista_amigos").load("amigos.html");
+						</script>
+						<!--********************************************-->
+
+					</div>
+
 				</div>
 			</div>
 		</div>
@@ -95,7 +132,7 @@
 	
 	
 	<footer title="footer">
-	    Copyright © 2018 Esta aplicación ha sido desarrollada por los estudiantes de Aplicaciones de Tecnología Internet del periodo  I-2017. Todos los derechos reservados.
+	   <p style="text-align: center;"> Copyright © 2018 Esta aplicación ha sido desarrollada por los estudiantes de Aplicaciones de Tecnología Internet del periodo  I-2017. Todos los derechos reservados.</p>
 	</footer>
 
 </body>

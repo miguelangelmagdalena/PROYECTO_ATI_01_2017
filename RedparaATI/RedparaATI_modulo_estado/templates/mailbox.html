@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+		<title></title>
+	<!--CSS-->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/style_navegation_bar.css">
+	<link rel="stylesheet" type="text/css" href="css/style_mailbox.css">
+	<!--********************************************************************-->
+		<!--JS SRC-->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<!--********************************************************************-->
+</head>
+<body>
+
+<!--BARRA DE NAVEGACION-->
+
+  <div class="navegation_bar">
+  	
+	<script type="text/javascript">
+		$(".navegation_bar").load("navbar.html");
+	</script>
+
+  </div>
+
+<!--********************************************************************-->
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="hidden-xs hidden-sm col-md-3"></div>
+		<div class="col-sm-12 col-md-8">
+			<div class="message_area">
+				
+			</div>
+			<div class="area_texto">
+			<textarea id="text_area" placeholder="Escriba un mensaje.."></textarea>
+			<button class="btn btn-primary" id="send_message"><span class="glyphicon glyphicon-send"></span></button>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
