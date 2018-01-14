@@ -61,6 +61,7 @@ a {
 	text-align:center;
 
 	height: 80vh;
+	overflow-y: scroll;
 }
 
 .margin-top{
@@ -124,9 +125,6 @@ a {
     align-items: center;
     vertical-align: middle;
 }
-
-
-
 
 
 
