@@ -22,11 +22,6 @@ $(document).ready(function(){//Cuando cargan todos los elementos del DOM
 
 
 
-
-
-
-	
-
     $(document).on('show.bs.modal', '.modal', function (event) {
         var zIndex = 1040 + (10 * $('.modal:visible').length);
         $(this).css('z-index', zIndex);
@@ -37,6 +32,8 @@ $(document).ready(function(){//Cuando cargan todos los elementos del DOM
 
 
 
+   	$("[data-toggle=popover]")
+	.popover({html:true})
 
 });
 
