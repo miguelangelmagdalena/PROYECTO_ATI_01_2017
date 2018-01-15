@@ -7,17 +7,35 @@ $(document).ready(function(){//Cuando cargan todos los elementos del DOM
 	more_elements_callback(i,increment,max_value);
 
 	//Evento de ver más al hacer scroll
-	$(window).scroll(function(){
-		var windowHeight = $(window).scrollTop();
-		var windowHeight2 = $(window).height();
-		var documentHeight = $(document).height();
-		//var contentTarget = $("#Superbutton").offset().top;
- 		//console.log(windowHeight + "px / boton: " + contentTarget + "px");
+	$("#content").scroll(function(){
+		var windowHeight = $(this).scrollTop();
+		var windowHeight2 = $(this).height();
+		//var documentHeight = $(document).height();
+		var documentHeight = document.getElementById("content").scrollHeight;
+
 		//console.log(windowHeight + "px / height: " + windowHeight2 + "px / altura " + documentHeight + "px");
+
 		if((windowHeight + windowHeight2) >= documentHeight  ){
 			$("#Superbutton").click();	
 		}
 	});
+
+
+
+
+
+
+	
+
+    $(document).on('show.bs.modal', '.modal', function (event) {
+        var zIndex = 1040 + (10 * $('.modal:visible').length);
+        $(this).css('z-index', zIndex);
+        setTimeout(function() {
+            $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');
+        }, 0);
+    });
+
+
 
 
 });
