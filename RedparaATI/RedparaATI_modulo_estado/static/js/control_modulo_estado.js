@@ -63,16 +63,16 @@ $(document).ready(function(){//Cuando cargan todos los elementos del DOM
     	//Hacemos algo con el input
     	$("#myModal2 #input_video").change(function(){
     		youtube_code = getParameterByName("v",$(this).val());
-    		$("#myModal2 .publicar_multimedia").html("<iframe class='publicar_multimedia2' src='https://www.youtube.com/embed/"+youtube_code+"'> </iframe>");
+    		$("#myModal2 .publicar_multimedia").html("<iframe class='publicacion_multimedia2_video' src='https://www.youtube.com/embed/"+youtube_code+"'> </iframe>");
     	});
     	//Al cerrar el modal
     	$('#myModal2').on('hidden.bs.modal', function () {
 		  $("#myModal2 #input_video").remove(); //Eliminamos el input
-		  $("#myModal2 .publicar_multimedia2").remove();
+		  $("#myModal2 .publicacion_multimedia2_video").remove();
 		});
 		//Al click en adjuntar
 		$("#myModal2 .adjuntar_multimedia").click(function(){
-			$("#myModal .publicar_multimedia").html("<iframe class='publicar_multimedia2' src='https://www.youtube.com/embed/"+youtube_code+"'> </iframe>");
+			$("#myModal .publicar_multimedia").html("<iframe class='publicacion_multimedia2_video' src='https://www.youtube.com/embed/"+youtube_code+"'> </iframe>");
 		});
     });
 
@@ -87,6 +87,9 @@ $(document).ready(function(){//Cuando cargan todos los elementos del DOM
     });
 
 
+    $(".publicar_modal_video").click(function(){
+    	$("#myModal2 #input_video").prop('disabled', false);
+    })
 
 
 });
@@ -224,11 +227,17 @@ function more_elements_callback(index,increment,max_value){ //Funcion para agreg
 					var aux1 = "";
 					var aux2 = "comentarios_foto_miniatura2";
 
+					var aux3 =					"<div class='publicacion_opciones flotar_derecha'>";
+					aux3 +=							"<button class='publicacion_opciones_button'>";
+					aux3 +=								"<img class='publicacion_icon' src='../static/images/icon-comentar.png'>" ;
+					aux3 +=								"<span class='publicacion_opciones_texto comentario_font'>"+mydata[i].comentarios[j].respuestas+"</span>";
+					aux3 +=							"</button>";
+					aux3 +=						"</div>	";
 
 					if(mydata[i].comentarios[j].id_comentario_principal != -1){
 						aux1 = "comentarios_respuesta";
 						aux2 = "comentarios_foto_miniatura3";
-
+						aux3 = "";
 					} 
 					
 					comentarios +=				"<div class='seccion_comentarios2 "+aux1+"'>";
@@ -249,12 +258,17 @@ function more_elements_callback(index,increment,max_value){ //Funcion para agreg
 					comentarios +=					"</div>";
 					comentarios +=					"<!-- Barra de opciones de publicacion y comentario -->";
 					comentarios +=					"<div class='publicacion_barra_opciones'>";
+
+					comentarios += aux3;
+/*
 					comentarios +=						"<div class='publicacion_opciones flotar_derecha'>";
 					comentarios +=							"<button class='publicacion_opciones_button'>";
 					comentarios +=								"<img class='publicacion_icon' src='../static/images/icon-comentar.png'>" ;
 					comentarios +=								"<span class='publicacion_opciones_texto comentario_font'>"+mydata[i].comentarios[j].respuestas+"</span>";
 					comentarios +=							"</button>";
 					comentarios +=						"</div>	";
+*/
+
 					comentarios +=						"<div class='publicacion_opciones flotar_derecha'>";
 					comentarios +=							"<button class='publicacion_opciones_button'>";
 					comentarios +=								"<img class='publicacion_icon' src='../static/images/icon-nomegusta.png'>" ;

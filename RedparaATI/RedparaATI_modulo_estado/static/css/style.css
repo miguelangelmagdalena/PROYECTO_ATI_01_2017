@@ -137,8 +137,7 @@ a {
 	font-family: FontAwesome;
 }
 .publicar_multimedia2{
-	width: 100%;
-    height: 364px;
+	max-width: 100%;
 
 }
 .icon-color {
@@ -361,7 +360,11 @@ a.socialIcon:hover, .socialHoverClass {
     text-justify: inter-word;
 }
 .publicacion_multimedia2{
+	max-width: 100%;
+}
+.publicacion_multimedia2_video{
 	width: 100%;
+	height: 364px;
 }
 .publicacion_barra_opciones{
 
