@@ -12,15 +12,11 @@ $(document).ready(function(){//Cuando cargan todos los elementos del DOM
 		var windowHeight2 = $(this).height();
 		//var documentHeight = $(document).height();
 		var documentHeight = document.getElementById("content").scrollHeight;
-
 		//console.log(windowHeight + "px / height: " + windowHeight2 + "px / altura " + documentHeight + "px");
-
 		if((windowHeight + windowHeight2) >= documentHeight  ){
 			$("#Superbutton").click();	
 		}
 	});
-
-
 
     $(document).on('show.bs.modal', '.modal', function (event) {
         var zIndex = 1040 + (10 * $('.modal:visible').length);
@@ -31,15 +27,89 @@ $(document).ready(function(){//Cuando cargan todos los elementos del DOM
     });
 
 
+    //Al presionar botones del modal1 de publicar
+    $(".publicar_modal_imagen").click(function(){ //Boton de Imagen
+    	$("#myModal2 .modal-title").html("<i class='fa fa-file-image-o icon-color' aria-hidden='true'></i> Imagen");
+    	$("#myModal2 .col-form-label").html("Enlace de la imagen");
 
-   	$("[data-toggle=popover]")
-	.popover({html:true})
+    	var src_image;
+    	//Agregamos el input
+    	$("<input type='text' id='input_imagen' class='form-control'>").insertAfter("#myModal2 .col-form-label");
+    	//Hacemos algo con el input
+    	$("#myModal2 #input_imagen").change(function(){
+    		src_image = $(this).val()
+    		$("#myModal2 .publicar_multimedia").html("<img class='publicar_multimedia2' src='"+src_image+"'> </img>");
+    	});
+
+    	//Al cerrar el modal
+    	$('#myModal2').on('hidden.bs.modal', function () {
+		  $("#myModal2 #input_imagen").remove(); //Eliminamos el input
+		  $("#myModal2 .publicar_multimedia2").remove();
+		});
+
+		//Al click en adjuntar
+		$("#myModal2 .adjuntar_multimedia").click(function(){
+			$("#myModal .publicar_multimedia").html("<img class='publicar_multimedia2' src='"+src_image+"'> </img>");
+		});
+    });
+
+    $(".publicar_modal_video").click(function(){ //Boton de Video
+    	$("#myModal2 .modal-title").html("<i class='fa fa-file-video-o icon-color' aria-hidden='true'></i> Video");
+    	$("#myModal2 .col-form-label").html("Enlace del video");
+
+    	var youtube_code;
+    	//Agregamos el input
+    	$("<input type='text' id='input_video' class='form-control'>").insertAfter("#myModal2 .col-form-label");
+    	//Hacemos algo con el input
+    	$("#myModal2 #input_video").change(function(){
+    		youtube_code = getParameterByName("v",$(this).val());
+    		$("#myModal2 .publicar_multimedia").html("<iframe class='publicar_multimedia2' src='https://www.youtube.com/embed/"+youtube_code+"'> </iframe>");
+    	});
+    	//Al cerrar el modal
+    	$('#myModal2').on('hidden.bs.modal', function () {
+		  $("#myModal2 #input_video").remove(); //Eliminamos el input
+		  $("#myModal2 .publicar_multimedia2").remove();
+		});
+		//Al click en adjuntar
+		$("#myModal2 .adjuntar_multimedia").click(function(){
+			$("#myModal .publicar_multimedia").html("<iframe class='publicar_multimedia2' src='https://www.youtube.com/embed/"+youtube_code+"'> </iframe>");
+		});
+    });
+
+    $(".publicar_modal_audio").click(function(){
+    	$("#myModal2 .modal-title").html("<i class='fa fa-file-audio-o icon-color' aria-hidden='true'></i> Audio");
+    	$("#myModal2 .col-form-label").html("Enlace del audio");
+    });
+
+    $(".publicar_modal_link").click(function(){
+    	$("#myModal2 .modal-title").html("<i class='fa fa-external-link icon-color' aria-hidden='true'></i> Enlace");
+    	$("#myModal2 .col-form-label").html("Enlace del enlace");
+    });
+
+
+
 
 });
 
 
 /*****************OTRAS FUNCIONES********************************/
+function getParameterByName(name, url) { //Obtiene un value de un query string
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
 
+    /*EJEMPLO
+	// query string: ?foo=lorem&bar=&baz
+	var foo = getParameterByName('foo'); // "lorem"
+	var bar = getParameterByName('bar'); // "" (present with empty value)
+	var baz = getParameterByName('baz'); // "" (present with no value)
+	var qux = getParameterByName('qux'); // null (absent)
+    */
+}
 
 function hide_button(){ // Elimina el botón de carga de mas publicaciones del DOM
 
