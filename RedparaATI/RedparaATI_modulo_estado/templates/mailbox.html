@@ -4,10 +4,8 @@
 	<title></title>
 		<title></title>
 	<!--CSS-->
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="css/style_navegation_bar.css">
-	<link rel="stylesheet" type="text/css" href="css/style_mailbox.css">
 
+	<link rel="stylesheet" type="text/css" href="../static/css/style_navegation_bar.css">
 	<link rel="stylesheet" href="../static/vendor/css/bootstrap.min.css" type="text/css">
 	<link rel="stylesheet" type="text/css" href="../static/css/style_navegation_bar.css">
 	<link rel="stylesheet" type="text/css" href="../static/css/style_base_container.css">
@@ -15,12 +13,39 @@
 
 	<!--********************************************************************-->
 		<!--JS SRC-->
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script src="../static/vendor/js/jquery-3.2.1.min.js"></script>
 	<script src="../static/vendor/js/bootstrap.min.js"></script>
 	<!--********************************************************************-->
 </head>
+<style type="text/css">
+	.message_area{
+		height: 60vh;
+		overflow-y: scroll;
+	}
+
+	.area_texto{
+	 background-color: #f4f2f2;
+	 border-radius: 10px;
+	 padding-top: 10px;
+	 padding-left: 10px;
+	}
+	#text_area{
+		width: 90%;
+		resize: none;
+	}
+
+	.list_friend{
+		list-style: none;
+	}
+	.id_chat{
+		color: white;
+		background-color: deepskyblue;
+		font-weight: 700;
+		text-align: center;
+		width: 100%;
+		height: 30px;
+	}
+</style>
 <body>
 
 <!--BARRA DE NAVEGACION-->
@@ -34,17 +59,30 @@
   </div>
 
 <!--********************************************************************-->
+<br><br>
 
 <div class="container-fluid">
 	<div class="row">
-		<div class="hidden-xs hidden-sm col-md-3"></div>
+		<div class="hidden-xs hidden-sm col-md-3">
+			<ul class="list_friend">
+				<li><a href="#">Tim Drake</a></li>
+				<li><a href="#">Kal-el</a></li>
+				<li><a href="#">Hal-Jordan</a></li>
+				<li><a href="#">Bruce Wayne</a></li>
+				<li><a href="#">Wally West</a></li>
+				<li><a href="#">Dick Grayson</a></li>
+				<li><a href="#">Diana Prince</a></li>			
+			</ul>
+		</div>
 		<div class="col-sm-12 col-md-8">
+			<div class="id_chat"><h4>Tim Drake</h4></div>
 			<div class="message_area">
 				
 			</div>
+			<br>
 			<div class="area_texto">
 			<textarea id="text_area" placeholder="Escriba un mensaje.."></textarea>
-			<button class="btn btn-primary" id="send_message"><span class="glyphicon glyphicon-send"></span></button>
+			<button class="btn btn-primary" id="send_message"><span class="glyphicon glyphicon-send"></span>Enviar</button>
 			</div>
 		</div>
 	</div>

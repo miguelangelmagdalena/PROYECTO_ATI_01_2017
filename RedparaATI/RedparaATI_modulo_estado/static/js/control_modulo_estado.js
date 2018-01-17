@@ -7,24 +7,112 @@ $(document).ready(function(){//Cuando cargan todos los elementos del DOM
 	more_elements_callback(i,increment,max_value);
 
 	//Evento de ver más al hacer scroll
-	$(window).scroll(function(){
-		var windowHeight = $(window).scrollTop();
-		var windowHeight2 = $(window).height();
-		var documentHeight = $(document).height();
-		//var contentTarget = $("#Superbutton").offset().top;
- 		//console.log(windowHeight + "px / boton: " + contentTarget + "px");
+	$("#content").scroll(function(){
+		var windowHeight = $(this).scrollTop();
+		var windowHeight2 = $(this).height();
+		//var documentHeight = $(document).height();
+		var documentHeight = document.getElementById("content").scrollHeight;
 		//console.log(windowHeight + "px / height: " + windowHeight2 + "px / altura " + documentHeight + "px");
 		if((windowHeight + windowHeight2) >= documentHeight  ){
 			$("#Superbutton").click();	
 		}
 	});
 
+    $(document).on('show.bs.modal', '.modal', function (event) {
+        var zIndex = 1040 + (10 * $('.modal:visible').length);
+        $(this).css('z-index', zIndex);
+        setTimeout(function() {
+            $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');
+        }, 0);
+    });
+
+
+    //Al presionar botones del modal1 de publicar
+    $(".publicar_modal_imagen").click(function(){ //Boton de Imagen
+    	$("#myModal2 .modal-title").html("<i class='fa fa-file-image-o icon-color' aria-hidden='true'></i> Imagen");
+    	$("#myModal2 .col-form-label").html("Enlace de la imagen");
+
+    	var src_image;
+    	//Agregamos el input
+    	$("<input type='text' id='input_imagen' class='form-control'>").insertAfter("#myModal2 .col-form-label");
+    	//Hacemos algo con el input
+    	$("#myModal2 #input_imagen").change(function(){
+    		src_image = $(this).val()
+    		$("#myModal2 .publicar_multimedia").html("<img class='publicar_multimedia2' src='"+src_image+"'> </img>");
+    	});
+
+    	//Al cerrar el modal
+    	$('#myModal2').on('hidden.bs.modal', function () {
+		  $("#myModal2 #input_imagen").remove(); //Eliminamos el input
+		  $("#myModal2 .publicar_multimedia2").remove();
+		});
+
+		//Al click en adjuntar
+		$("#myModal2 .adjuntar_multimedia").click(function(){
+			$("#myModal .publicar_multimedia").html("<img class='publicar_multimedia2' src='"+src_image+"'> </img>");
+		});
+    });
+
+    $(".publicar_modal_video").click(function(){ //Boton de Video
+    	$("#myModal2 .modal-title").html("<i class='fa fa-file-video-o icon-color' aria-hidden='true'></i> Video");
+    	$("#myModal2 .col-form-label").html("Enlace del video");
+
+    	var youtube_code;
+    	//Agregamos el input
+    	$("<input type='text' id='input_video' class='form-control'>").insertAfter("#myModal2 .col-form-label");
+    	//Hacemos algo con el input
+    	$("#myModal2 #input_video").change(function(){
+    		youtube_code = getParameterByName("v",$(this).val());
+    		$("#myModal2 .publicar_multimedia").html("<iframe class='publicacion_multimedia2_video' src='https://www.youtube.com/embed/"+youtube_code+"'> </iframe>");
+    	});
+    	//Al cerrar el modal
+    	$('#myModal2').on('hidden.bs.modal', function () {
+		  $("#myModal2 #input_video").remove(); //Eliminamos el input
+		  $("#myModal2 .publicacion_multimedia2_video").remove();
+		});
+		//Al click en adjuntar
+		$("#myModal2 .adjuntar_multimedia").click(function(){
+			$("#myModal .publicar_multimedia").html("<iframe class='publicacion_multimedia2_video' src='https://www.youtube.com/embed/"+youtube_code+"'> </iframe>");
+		});
+    });
+
+    $(".publicar_modal_audio").click(function(){
+    	$("#myModal2 .modal-title").html("<i class='fa fa-file-audio-o icon-color' aria-hidden='true'></i> Audio");
+    	$("#myModal2 .col-form-label").html("Enlace del audio");
+    });
+
+    $(".publicar_modal_link").click(function(){
+    	$("#myModal2 .modal-title").html("<i class='fa fa-external-link icon-color' aria-hidden='true'></i> Enlace");
+    	$("#myModal2 .col-form-label").html("Enlace del enlace");
+    });
+
+
+    $(".publicar_modal_video").click(function(){
+    	$("#myModal2 #input_video").prop('disabled', false);
+    })
+
 
 });
 
 
 /*****************OTRAS FUNCIONES********************************/
+function getParameterByName(name, url) { //Obtiene un value de un query string
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
 
+    /*EJEMPLO
+	// query string: ?foo=lorem&bar=&baz
+	var foo = getParameterByName('foo'); // "lorem"
+	var bar = getParameterByName('bar'); // "" (present with empty value)
+	var baz = getParameterByName('baz'); // "" (present with no value)
+	var qux = getParameterByName('qux'); // null (absent)
+    */
+}
 
 function hide_button(){ // Elimina el botón de carga de mas publicaciones del DOM
 
@@ -77,15 +165,15 @@ function more_elements_callback(index,increment,max_value){ //Funcion para agreg
 			var publicacion = "	<div class='publicacion shadow border_radius'>";
 			publicacion +=			"<div class='publicacion2'>";
 			publicacion +=				"<div class='publicacion_barra_nombre'>";				
-			publicacion +=					"<a href=''>";
+			publicacion +=					"<a href='#'>";
 			publicacion +=						"<img class='publicacion_foto_miniatura' src='"+mydata[i].foto_perfil+"'> ";
 			publicacion +=					"</a>";
 			publicacion +=					"<div class='publicacion_nombre '>";
-			publicacion +=						"<a href=''>"
+			publicacion +=						"<a href='#'>"
 			publicacion +=							"<h2 class='publicacion_nombre2 titulo'>"+mydata[i].nombre_usuario+"</h2>";
 			publicacion +=						"</a>";					
 			publicacion +=					"</div>";
-			publicacion +=					"<button href='' class='publicacion_submenu_control_button'>";
+			publicacion +=					"<button href='#' class='publicacion_submenu_control_button'>";
 			publicacion +=						"<h2 class='publicacion_submenu_control titulo'>☰</h2>";
 			publicacion +=					"</button>";
 			publicacion +=				"</div>";
@@ -94,7 +182,7 @@ function more_elements_callback(index,increment,max_value){ //Funcion para agreg
 			publicacion +=						mydata[i].texto;
 			publicacion +=					"</p>";
 			publicacion +=					"<div class='publicacion_multimedia'>";
-			publicacion +=						"<a href=''>";
+			publicacion +=						"<a href='#'>";
 			publicacion +=							"<img class='publicacion_multimedia2' src='"+mydata[i].multimedia_url+"'>";
 			publicacion +=						"</a>";
 			publicacion +=					"</div>";
@@ -139,20 +227,26 @@ function more_elements_callback(index,increment,max_value){ //Funcion para agreg
 					var aux1 = "";
 					var aux2 = "comentarios_foto_miniatura2";
 
+					var aux3 =					"<div class='publicacion_opciones flotar_derecha'>";
+					aux3 +=							"<button class='publicacion_opciones_button'>";
+					aux3 +=								"<img class='publicacion_icon' src='../static/images/icon-comentar.png'>" ;
+					aux3 +=								"<span class='publicacion_opciones_texto comentario_font'>"+mydata[i].comentarios[j].respuestas+"</span>";
+					aux3 +=							"</button>";
+					aux3 +=						"</div>	";
 
 					if(mydata[i].comentarios[j].id_comentario_principal != -1){
 						aux1 = "comentarios_respuesta";
 						aux2 = "comentarios_foto_miniatura3";
-
+						aux3 = "";
 					} 
 					
 					comentarios +=				"<div class='seccion_comentarios2 "+aux1+"'>";
 					comentarios +=					"<div class='publicacion_barra_nombre'>";				
-					comentarios +=						"<a href=''>";
+					comentarios +=						"<a href='#'>";
 					comentarios +=							"<img class='publicacion_foto_miniatura "+aux2+"' src='"+mydata[i].comentarios[j].foto_perfil+"'> ";
 					comentarios +=						"</a>";
 					comentarios +=						"<div class='publicacion_nombre '>";
-					comentarios +=							"<a href=''>";
+					comentarios +=							"<a href='#'>";
 					comentarios +=								"<h2 class='publicacion_nombre2 titulo2'>"+mydata[i].comentarios[j].nombre_usuario+"</h2>";
 					comentarios +=							"</a>";
 					comentarios +=						"</div>";
@@ -164,12 +258,17 @@ function more_elements_callback(index,increment,max_value){ //Funcion para agreg
 					comentarios +=					"</div>";
 					comentarios +=					"<!-- Barra de opciones de publicacion y comentario -->";
 					comentarios +=					"<div class='publicacion_barra_opciones'>";
+
+					comentarios += aux3;
+/*
 					comentarios +=						"<div class='publicacion_opciones flotar_derecha'>";
 					comentarios +=							"<button class='publicacion_opciones_button'>";
 					comentarios +=								"<img class='publicacion_icon' src='../static/images/icon-comentar.png'>" ;
 					comentarios +=								"<span class='publicacion_opciones_texto comentario_font'>"+mydata[i].comentarios[j].respuestas+"</span>";
 					comentarios +=							"</button>";
 					comentarios +=						"</div>	";
+*/
+
 					comentarios +=						"<div class='publicacion_opciones flotar_derecha'>";
 					comentarios +=							"<button class='publicacion_opciones_button'>";
 					comentarios +=								"<img class='publicacion_icon' src='../static/images/icon-nomegusta.png'>" ;
