@@ -173,9 +173,19 @@ function more_elements_callback(index,increment,max_value){ //Funcion para agreg
 			publicacion +=							"<h2 class='publicacion_nombre2 titulo'>"+mydata[i].nombre_usuario+"</h2>";
 			publicacion +=						"</a>";					
 			publicacion +=					"</div>";
-			publicacion +=					"<button href='#' class='publicacion_submenu_control_button'>";
-			publicacion +=						"<h2 class='publicacion_submenu_control titulo'>☰</h2>";
-			publicacion +=					"</button>";
+
+			publicacion +=					"<div class='dropdown show dropup'>"
+			publicacion +=						"<button href='#' class='publicacion_submenu_control_button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'> ";
+			publicacion +=							"<h2 class='publicacion_submenu_control titulo'>☰</h2>";
+			publicacion +=						"</button>";
+			publicacion +=						"<div class='dropdown-menu' aria-labelledby='dropdownMenuLink'>";
+			publicacion +=							"<a class='dropdown-item' href='#'>Action</a>";
+			publicacion +=							"<a class='dropdown-item' href='#'>Another action</a>";
+			publicacion +=							"<a class='dropdown-item' href='#'>Something else here</a>";
+			publicacion +=						"</div>";
+			publicacion +=					"</div>";
+
+
 			publicacion +=				"</div>";
 			publicacion +=				"<div class='publicacion_barra_texto'>";
 			publicacion +=					"<p class='publicacion_texto'>";

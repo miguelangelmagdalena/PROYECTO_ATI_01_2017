@@ -338,6 +338,7 @@ a.socialIcon:hover, .socialHoverClass {
     vertical-align: middle;
 }
 .publicacion_submenu_control_button{
+	cursor: pointer;
 	border:none;
     background-color: transparent;
     vertical-align: middle;
