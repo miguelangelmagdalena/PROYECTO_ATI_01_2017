@@ -417,6 +417,7 @@ a.socialIcon:hover, .socialHoverClass {
 .publicacion_opciones_button{
 	border:none;
     background-color: transparent;
+    cursor: pointer;
 }
 .publicacion_opciones_texto{
 	/*position: absolute;*/

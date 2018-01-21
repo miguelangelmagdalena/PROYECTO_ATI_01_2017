@@ -36,7 +36,7 @@ $(document).ready(function(){//Cuando cargan todos los elementos del DOM
     	//Agregamos el input
     	$("<input type='text' id='input_imagen' class='form-control'>").insertAfter("#myModal2 .col-form-label");
     	//Hacemos algo con el input
-    	$("#myModal2 #input_imagen").change(function(){
+    	$("#myModal2 #input_imagen").on("change keyup paste", function(){
     		src_image = $(this).val()
     		$("#myModal2 .publicar_multimedia").html("<img class='publicar_multimedia2' src='"+src_image+"'> </img>");
     	});
@@ -61,7 +61,7 @@ $(document).ready(function(){//Cuando cargan todos los elementos del DOM
     	//Agregamos el input
     	$("<input type='text' id='input_video' class='form-control'>").insertAfter("#myModal2 .col-form-label");
     	//Hacemos algo con el input
-    	$("#myModal2 #input_video").change(function(){
+    	$("#myModal2 #input_video").on("change keyup paste", function(){
     		youtube_code = getParameterByName("v",$(this).val());
     		$("#myModal2 .publicar_multimedia").html("<iframe class='publicacion_multimedia2_video' src='https://www.youtube.com/embed/"+youtube_code+"'> </iframe>");
     	});
@@ -87,10 +87,15 @@ $(document).ready(function(){//Cuando cargan todos los elementos del DOM
     });
 
 
+    $("#publicar .publicar_upload").click(function(){ // Al hacer click en boton de imagen en publicar debe ser un atajo a publicar imagen
+    	$(".publicar_boton").click();
+    	$(".publicar_modal_imagen").click();
+    });
+/*
     $(".publicar_modal_video").click(function(){
     	$("#myModal2 #input_video").prop('disabled', false);
     })
-
+*/
 
 });
 
@@ -176,12 +181,11 @@ function more_elements_callback(index,increment,max_value){ //Funcion para agreg
 
 			publicacion +=					"<div class='dropdown show dropup'>"
 			publicacion +=						"<button href='#' class='publicacion_submenu_control_button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'> ";
-			publicacion +=							"<h2 class='publicacion_submenu_control titulo'>☰</h2>";
+			publicacion +=							"<h2 class='publicacion_submenu_control titulo'><i class='fa fa-bars' aria-hidden='true'></i></h2>";
 			publicacion +=						"</button>";
 			publicacion +=						"<div class='dropdown-menu' aria-labelledby='dropdownMenuLink'>";
-			publicacion +=							"<a class='dropdown-item' href='#'>Action</a>";
-			publicacion +=							"<a class='dropdown-item' href='#'>Another action</a>";
-			publicacion +=							"<a class='dropdown-item' href='#'>Something else here</a>";
+			publicacion +=							"<a class='dropdown-item' href='#'>Editar</a>";
+			publicacion +=							"<a class='dropdown-item' href='#'>Eliminar</a>";
 			publicacion +=						"</div>";
 			publicacion +=					"</div>";
 
@@ -201,7 +205,7 @@ function more_elements_callback(index,increment,max_value){ //Funcion para agreg
 			publicacion +=				"<div class='publicacion_barra_opciones'>";
 			publicacion +=					"<div class='publicacion_opciones flotar_derecha'>";
 			publicacion +=						"<button class='publicacion_opciones_button'>";
-			publicacion +=							"<img class='publicacion_icon' src='../static/images/icon-comentar.png'>" ;
+			publicacion +=							"<i class='fa fa-comments' aria-hidden='true'></i>" ;
 			
 			var comentarios_length = mydata[i].comentarios.length;
 			publicacion +=							"<span class='publicacion_opciones_texto comentario_font'>"+comentarios_length+"</span>";
@@ -209,25 +213,25 @@ function more_elements_callback(index,increment,max_value){ //Funcion para agreg
 			publicacion +=					"</div>";												
 			publicacion +=					"<div class='publicacion_opciones flotar_derecha'>";
 			publicacion +=						"<button class='publicacion_opciones_button'>";
-			publicacion +=							"<img class='publicacion_icon' src='../static/images/icon-nomegusta.png'>"; 
+			publicacion +=							"<i class='fa fa-thumbs-down' aria-hidden='true'></i>"; 
 			publicacion +=							"<span class='publicacion_opciones_texto comentario_font'>"+mydata[i].cant_dislike+" |</span>";
 			publicacion +=						"</button>";
 			publicacion +=					"</div>";
 			publicacion +=					"<div class='publicacion_opciones flotar_derecha'>";
 			publicacion +=						"<button class='publicacion_opciones_button'>";
-			publicacion +=							"<img class='publicacion_icon' src='../static/images/icon-megusta.png'> ";
+			publicacion +=							"<i class='fa fa-thumbs-up' aria-hidden='true'></i> ";
 			publicacion +=							"<span class='publicacion_opciones_texto comentario_font'>"+mydata[i].cant_like+" |</span>";
 			publicacion +=						"</button>";
 			publicacion +=					"</div>";
 			publicacion +=					"<div class='publicacion_visto flotar_derecha'>";
-			publicacion +=							"<img class='publicacion_visto2' src='../static/images/icon-visto.png'> ";
+			publicacion +=							"<i class='fa fa-eye' aria-hidden='true'></i>";
 			publicacion +=							"<span class='publicacion_visto3 comentario_font'>"+mydata[i].cant_visualizaciones+" Visto</span>";
 			publicacion +=					"</div>";
 			publicacion +=					"<div class='publicacion_barra_opciones2'>";
 			publicacion +=						"<div class='fecha1 flotar_izquierda'>"+mydata[i].fecha_creacion+"</div>";
 			publicacion +=						"<div class='fecha2 flotar_izquierda'>(editado "+mydata[i].fecha_modificacion+")</div>";												
 			publicacion +=					"</div>";
-			publicacion +=				"</div>";
+			publicacion +=				"</div> <hr />";
 
 			if(comentarios_length != 0){
 				publicacion +=				"<div class='seccion_comentarios'>";
@@ -236,10 +240,11 @@ function more_elements_callback(index,increment,max_value){ //Funcion para agreg
 					var comentarios = "";
 					var aux1 = "";
 					var aux2 = "comentarios_foto_miniatura2";
+					var rayita = "|";
 
 					var aux3 =					"<div class='publicacion_opciones flotar_derecha'>";
 					aux3 +=							"<button class='publicacion_opciones_button'>";
-					aux3 +=								"<img class='publicacion_icon' src='../static/images/icon-comentar.png'>" ;
+					aux3 +=								"<i class='fa fa-comments' aria-hidden='true'></i>" ;
 					aux3 +=								"<span class='publicacion_opciones_texto comentario_font'>"+mydata[i].comentarios[j].respuestas+"</span>";
 					aux3 +=							"</button>";
 					aux3 +=						"</div>	";
@@ -248,6 +253,7 @@ function more_elements_callback(index,increment,max_value){ //Funcion para agreg
 						aux1 = "comentarios_respuesta";
 						aux2 = "comentarios_foto_miniatura3";
 						aux3 = "";
+						rayita = "";
 					} 
 					
 					comentarios +=				"<div class='seccion_comentarios2 "+aux1+"'>";
@@ -260,7 +266,10 @@ function more_elements_callback(index,increment,max_value){ //Funcion para agreg
 					comentarios +=								"<h2 class='publicacion_nombre2 titulo2'>"+mydata[i].comentarios[j].nombre_usuario+"</h2>";
 					comentarios +=							"</a>";
 					comentarios +=						"</div>";
+
+
 					comentarios +=					"</div>";
+
 					comentarios +=					"<div class='publicacion_barra_texto margin3'>";
 					comentarios +=						"<p class='publicacion_texto'>";
 					comentarios +=							mydata[i].comentarios[j].texto;
@@ -270,24 +279,16 @@ function more_elements_callback(index,increment,max_value){ //Funcion para agreg
 					comentarios +=					"<div class='publicacion_barra_opciones'>";
 
 					comentarios += aux3;
-/*
-					comentarios +=						"<div class='publicacion_opciones flotar_derecha'>";
-					comentarios +=							"<button class='publicacion_opciones_button'>";
-					comentarios +=								"<img class='publicacion_icon' src='../static/images/icon-comentar.png'>" ;
-					comentarios +=								"<span class='publicacion_opciones_texto comentario_font'>"+mydata[i].comentarios[j].respuestas+"</span>";
-					comentarios +=							"</button>";
-					comentarios +=						"</div>	";
-*/
 
 					comentarios +=						"<div class='publicacion_opciones flotar_derecha'>";
 					comentarios +=							"<button class='publicacion_opciones_button'>";
-					comentarios +=								"<img class='publicacion_icon' src='../static/images/icon-nomegusta.png'>" ;
-					comentarios +=								"<span class='publicacion_opciones_texto comentario_font'>"+mydata[i].comentarios[j].cant_dislike+" |</span>";
+					comentarios +=								"<i class='fa fa-thumbs-down' aria-hidden='true'></i>" ;
+					comentarios +=								"<span class='publicacion_opciones_texto comentario_font'>"+mydata[i].comentarios[j].cant_dislike+rayita+"</span>";
 					comentarios +=							"</button>";
 					comentarios +=						"</div>";
 					comentarios +=						"<div class='publicacion_opciones flotar_derecha'>";
 					comentarios +=							"<button class='publicacion_opciones_button'>";
-					comentarios +=								"<img class='publicacion_icon' src='../static/images/icon-megusta.png'>" ;
+					comentarios +=								"<i class='fa fa-thumbs-up' aria-hidden='true'></i>" ;
 					comentarios +=								"<span class='publicacion_opciones_texto comentario_font'>"+mydata[i].comentarios[j].cant_like+" |</span>";
 					comentarios +=							"</button>";
 					comentarios +=						"</div>";

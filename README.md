@@ -3,7 +3,7 @@ Proyecto Red Social de Aplicaciones con la Tecnología Internet 01-2017 UCV
 
 ## Para ver la pagina con Github Pages
 Aqui va a ser la pagina de estado:
-* https://musthagon.github.io/PROYECTO_ATI_01_2017/RedparaATI/templates/
+* https://musthagon.github.io/PROYECTO_ATI_01_2017/RedparaATI/templates/index.html
 
 ## Como esta organizado el directorio?
 Es una estructura que recomienda el framework python flask 
