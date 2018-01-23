@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!--CSS-->
+	<link rel="stylesheet" type="text/css" href="../static/vendor/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/style_navegation_bar.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/style_base_container.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/style_lateral_chat.css">
+	<!--********************************************************************-->
+	<!--JS SRC-->
+	<script type="text/javascript" src="../static/vendor/js/jquery.js"></script>
+	<script type="text/javascript" src="../static/vendor/js/bootstrap.js"></script>
+	<!--********************************************************************-->
+
+</head>
+<body>
+
+<!--BARRA DE NAVEGACION-->
+
+  <div class="navegation_bar">
+    <div class="row row-list">
+      <div class=" col-xs-12 col-sm-12 col-md-12">
+          <div>
+            <ul class="navbar-right">
+          <li><a href="#"><p> Muro </p><span class="glyphicon glyphicon-list-alt"></span></a></li>
+          <li><a href="#"><p> Perfil </p><span class="glyphicon glyphicon-home"></span></a></li>
+          <li><a href="#"><p> Amigos </p><span class="glyphicon glyphicon-user"></span></a></li>
+          <li><a href="#"><p> Mensajes </p><span class="glyphicon glyphicon-comment"></span></a></li>
+          <li><a href="#"><p> Notificaciones </p><span class="glyphicon glyphicon-globe"></span></a></li>
+          <li class="close-session"><a href="#"><p> Cerrar sesión </p><span class="glyphicon glyphicon-log-out"></span></a></li>
+            </ul>
+          </div>
+      </div>
+    </div>
+  </div>
+
+ <!--********************************************************************-->
+
+ <div class="container-fluid">
+ 	<div class="row">
+
+ 		<div class="col-xs-12 col-sm-7 col-md-8">
+ 			<!--DENTRO DE EL DENTRO DE BASE_CONTAINER AGREGAR CODIGO DE LOS OTROS MODULOS-->
+ 			<!-- SI SE QUIERE USAR IFRAME <iframe src="" id="base_container"></iframe>-->
+	 			<div id="base_container" class="scroll-bar-style" style="text-align:center" style="width:200px;border:1px dotted black;text-align:center">
+					<div class="col-md-1"></div>
+					<div class="col-md-5">
+						<img src = "../static/img/anne.jpg" width="450" height="450" ></img>
+					</div>
+					<div class="perfil_container" class="col-md-5" width="300" height="300">
+						<form style="background-color:#cccccc" text-align = center>
+							<br />
+				 				<b> Nombre : </b>
+				  			<br />
+				 					<p class="p1">Karen</p>
+
+				 				<b> Apellido : </b> <br />
+				 					<p class="p1">Gonzalez</p>
+
+				 				<b> Edad : </b> <br />
+				 					<p class="p1">29</p>
+
+				 				<b> Color favorito : </b> <br />
+				 					<p class="p1">Rosado</p>
+
+				 				<b> Mostrar a : </b>
+				 				<br />
+									<select name="mostrar">
+				 					   <option value="1">Mis Amigos</option>
+				 					   <option value="2">Todos</option>
+				 					</select> <br /><br />
+
+								<button class="button button2">Editar</button>
+
+					</form>
+				</div>
+					<div class="col-md-1"></div>
+		</div>
+
+ 		</div>
+
+		<div class=" hidden-xs col-sm-5 col-md-4">
+
+			<!--BARRA CHAT-->
+
+			<div class="right_chat_module ">
+
+				<div class="container_search">
+					<img src="../static/img/search.png" width="30px;" id="search_img">
+					<input type="text" name="buscador_amigos" id="buscador_amigos" placeholder=" Buscar amigo ">
+					<button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-send"></span></button>
+				</div>
+
+				<div class="container_lista_amigos scroll-bar-style">
+
+					<!--SCRIPT TEMPORAL SOLO PARA EL PROTOTIPO FASE1-->
+					<script type="text/javascript">
+						$(".container_lista_amigos").load("amigos.html");
+					</script>
+					<!--********************************************-->
+
+				</div>
+
+			</div>
+
+		</div>
+
+ 	</div>
+ </div>
+
+
+<!--JS SRC-->
+<script type="text/javascript" src="../static/js/navegation_bar.js"></script>
+<!--********************************************************************-->
+
+</body>
+</html>
