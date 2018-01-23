@@ -267,9 +267,18 @@ function more_elements_callback(index,increment,max_value){ //Funcion para agreg
 					comentarios +=							"</a>";
 					comentarios +=						"</div>";
 
-
+					/*El menu le debe salir solo si es su comentario*/
+					comentarios +=					"<div class='dropdown show dropup'>"
+					comentarios +=						"<button href='#' class='publicacion_submenu_control_button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'> ";
+					comentarios +=							"<h2 class='publicacion_submenu_control titulo'><i class='fa fa-bars' aria-hidden='true'></i></h2>";
+					comentarios +=						"</button>";
+					comentarios +=						"<div class='dropdown-menu' aria-labelledby='dropdownMenuLink'>";
+					comentarios +=							"<a class='dropdown-item' href='#'>Editar</a>";
+					comentarios +=							"<a class='dropdown-item' href='#'>Eliminar</a>";
+					comentarios +=						"</div>";
 					comentarios +=					"</div>";
-
+					/*El menu le debe salir solo si es su comentario*/
+					comentarios +=					"</div>";
 					comentarios +=					"<div class='publicacion_barra_texto margin3'>";
 					comentarios +=						"<p class='publicacion_texto'>";
 					comentarios +=							mydata[i].comentarios[j].texto;
