@@ -7,7 +7,6 @@
   <link rel="shortcut icon" href="../static/images/icon.ico" type="image/x-icon" /> 
   <link rel="stylesheet" href ="../static/css/style.css">
   <link rel="stylesheet" type="text/css" href="../static/css/style_navegation_bar.css">
-  <link rel="stylesheet" type="text/css" href="../static/css/style_base_container.css">
   <link rel="stylesheet" type="text/css" href="../static/css/style_lateral_chat.css">
   
   <!-- scripts -->
@@ -39,10 +38,10 @@
 
   
   <!--<div class="containter-fluid margin-top">-->
-  <div class="containter">
+  <div class="containter" style="margin-top:60px; ">
     <div class="row">
 
-      <div class="col-xs-12 col-sm-7 col-md-8">
+      <div class="col-xs-12 col-sm-12 col-md-9">
         <div id= "content">
           
          <!--  ****SECCION DE PUBLICAR**** -->
@@ -148,39 +147,17 @@
       </div>
 
 
-
-
-      <div class="hidden-xs col-sm-5 col-md-4">
-        <!--BARRA CHAT-->
-      
-        <div class="right_chat_module ">
-
-          <div class="container_search">
-            <img src="../static/images/search.png" width="30px;" id="search_img">
-            <input type="text" name="buscador_amigos" id="buscador_amigos" placeholder=" Buscar amigo ">
-            <button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-send"></span></button>
-          </div>
-
-          <div class="container_lista_amigos scroll-bar-style">
-
-            <!--SCRIPT TEMPORAL SOLO PARA EL PROTOTIPO FASE1-->
-            <script type="text/javascript">
-              $(".container_lista_amigos").load("amigos.html");
-            </script>
-            <!--********************************************-->
-
-          </div>
-
-        </div>
-      </div>
     </div>
   </div>
-  
-  
-  <footer title="footer">
-     <p style="text-align: center;"> Copyright © 2018 Esta aplicación ha sido desarrollada por los estudiantes de Aplicaciones de Tecnología Internet del periodo  I-2017. Todos los derechos reservados.</p>
-  </footer>
 
 
+<div class="lateral-chat">
+<script type="text/javascript">
+  $(".lateral-chat").load("lateral-chat.html");
+</script>
+ </div> 
+
+</div>
+  
 </body>
 </html>

@@ -1,54 +1,34 @@
-  .row-list{
-    margin: 0px;
-    padding: 0px;
-    background: #228ae6;
-    height:40px;
-  }
 
-  .row-list ul {
-    margin: 0px;
-    padding: 0px; 
-  }
+.bar-menu {
+    background-color: #0e2656;
+    overflow: hidden;
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    top: 0px;
+}
 
-  .row-list ul li {
-    list-style: none;
+.bar-menu a{
+    float: left;
     display: inline-block;
-    margin: 5px;
-  }
-
-  .row-list ul li a {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
     text-decoration: none;
-    padding:8px;
+    font-size: 1em;
+}
+
+.bar-menu a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.active {
+    background-color: #4CAF50;
     color: white;
-  }
+}
 
-      .row-list ul p {
-      display: inline-block;
-      margin: 5px;
-
-    }
-
-  @media (max-width: 768px){
-
-   .row-list ul li {
-    list-style: none;
-    display: inline-block;
-    margin: 2px;
-    margin-top: 10px; 
-  }
-
-    .row-list ul p {
-      display: none;
-
-    }
-
-    .row-list ul span{
-      font-size: 15px;
-
-    }
-
-  .row-list ul li:hover {
-    background: transparent;
-  }
-
-  }
+.sign-out{
+    position: absolute;
+    right: 0px;
+}
