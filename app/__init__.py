@@ -1,6 +1,8 @@
 # Import flask and template operators
 from flask import Flask, render_template
 
+# Import pymongo para usar mongodb
+from pymongo import MongoClient
 # Import SQLAlchemy
 		#from flask.ext.sqlalchemy import SQLAlchemy
 
@@ -8,11 +10,12 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 # Configurations
-app.config.from_object('config')
+    #app.config.from_object('config')
 
 # Define the database object which is imported
 # by modules and controllers
-db = SQLAlchemy(app)
+client = MongoClient('localhost',27017)
+db = client.redparaati
 
 # Sample HTTP error handling
 @app.errorhandler(404)
@@ -29,4 +32,4 @@ app.register_blueprint(auth_module)
 
 # Build the database:
 # This will create the database file using SQLAlchemy
-db.create_all()
+		#db.create_all()
