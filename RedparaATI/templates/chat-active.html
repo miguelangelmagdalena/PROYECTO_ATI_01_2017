@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/style_chat-active.css">
+	<link rel="stylesheet" type="text/css" href="../static/font-awesome/css/font-awesome.css">
+	<script type="text/javascript" src="../static/js/jquery.js"></script>
+
+</head>
+<body>
+		<div class="marco">
+			<a href="#" class="chat-close">x</a>
+			<h4>Chat activo</h4>
+		</div>
+		<div class="chat">
+			<div class="chat-history">
+			</div> 
+			<form action="#" method="post" class="text-area">
+				<fieldset>
+					<input type="file" name="imagen" accept=".jpg, .jpeg, .png">
+					<br>
+					<input type="text" placeholder="Escribe un mensaje.." autofocus>
+					<button type="submit" name="eviar" class="send">Enviar</button>
+				</fieldset>
+			</form>
+		</div>
+
+
+<script type="text/javascript">
+	(function() {
+
+	$('#live-chat .marco').on('click', function() {
+
+		$('.chat').slideToggle(300, 'swing');
+		$('.chat-message-counter').fadeToggle(300, 'swing');
+
+	});
+
+	$('.chat-close').on('click', function(e) {
+
+		e.preventDefault();
+		$('#live-chat').fadeOut(300);
+
+	});
+
+}) ();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+#live-chat {
+	bottom: 0;
+	font-size: 12px;
+	right: 270px;
+	position: fixed;
+	width: 300px;
+	z-index: 2;
+}
+
+#live-chat h4 {
+	font-size:12px;
+}
+
+#live-chat h5 {
+	font-size:12px;
+}
+#live-chat .marco {
+
+	background: #0e2656;
+	border-radius: 5px 5px 0 0;
+	color: #fff;
+	height: 40px;
+	cursor: pointer;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#live-chat input[type="text"] {
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding: 8px;
+	outline: none;
+	width:220px;
+}
+
+.chat-close {
+	background: #1b2126;
+	border-radius: 50%;
+	color: #fff;
+	display: block;
+	float: right;
+	font-size: 10px;
+	height: 16px;
+	line-height: 16px;
+	margin: 2px 0 0 0;
+	text-align: center;
+	width: 16px;
+}
+
+.chat {
+	background: #edeff2;
+}
+
+.chat-history {
+	height: 252px;
+	padding: 8px 24px;
+	overflow-y: scroll;
+}
+
+.send {
+
+}
+
+.text-area{
+	padding: 6px 6px 6px 6px;
+	background: #cccccc;
+}
+
+@media (max-width: 768px) {
+	#live-chat{
+		position: fixed;
+		bottom: 0px;
+		right: 0px;
+		width: 250px;
+	}
+
+	.chat-history{
+		height: 100px;
+	}
+}
