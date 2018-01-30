@@ -9,7 +9,7 @@ from app import db
     #from app.mod_authentication.forms import LoginForm
 
 # Import module models (i.e. User)
-    #from app.mod_authentication.models import User
+#from app.mod_authentication.models import User
 
 # Define the blueprint: 'auth', set its url prefix: app.url/auth
 mod_authentication = Blueprint('authentication', __name__, url_prefix='/authentication')
