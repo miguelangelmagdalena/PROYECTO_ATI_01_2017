@@ -1,5 +1,6 @@
 {
-	"usuarios" : [
+	"usuarios" : 
+  [
 		{
       "id" : 199,
       "user_name" : "miguelangelmagdalena",
@@ -7,20 +8,25 @@
       "email" : "miguel@gmail.com",
       "nombre" : "miguel",
       "descripcion" : "todo ta' bien",
-      "color" : [
+      "color" : 
+      [
         {"hex" : "#182838"},
         {"hex" : "#00ffbb"}
       ],
-      "libro" : [
+      "libro" : 
+      [
         {}
       ],
-      "musica" : [
+      "musica" : 
+      [
         {}
       ],
-      "video_juego" : [
+      "video_juego" : 
+      [
         {}
       ],
-      "lenguajes" : [
+      "lenguajes" : 
+      [
         {}
       ],
       "genero" : "masculino",
@@ -31,7 +37,8 @@
       "facebook" : "",
       "twitter" : "",
       "activa" : "",
-      "Notificacion" : [
+      "Notificacion" : 
+      [
         {
           "id" : 100,
           "tipo" : "Notificacion amistad",
@@ -45,9 +52,10 @@
         "notificaciones_comentarios" : 1
         //Faltan campos ...
       },
-      "relacion": [
+      "relacion": 
+      [
         {
-          "id": "200", 
+          "id": 200, 
           "tipo_relacion" : "Mejores Amigos",
           "fecha_inicio_relacion" : "2017/12/01",
           "privacidad" : "",
@@ -57,13 +65,80 @@
       "chat" : [1235,1254,87],
       "estados" : [125,128],
       "voto_estado" : [878,879],
-      "comentarios" : [901,990]
+      "comentarios" : [1001,1005]
+    },
+    {
+      "id" : 200,
+      "user_name" : "miguelangelmagdalena",
+      "password" : "1234",
+      "email" : "miguel@gmail.com",
+      "nombre" : "miguel",
+      "descripcion" : "todo ta' bien",
+      "color" : 
+      [
+        {"hex" : "#182838"},
+        {"hex" : "#00ffbb"}
+      ],
+      "libro" : 
+      [
+        {}
+      ],
+      "musica" : 
+      [
+        {}
+      ],
+      "video_juego" : 
+      [
+        {}
+      ],
+      "lenguajes" : 
+      [
+        {}
+      ],
+      "genero" : "masculino",
+      "ci" : "1000123",
+      "fecha_nacimiento" : "1997/12/01",
+      "ruta_foto_perfil" : "../../static/files/199/perfil.jpg",
+      "telefono" : "04161231234",
+      "facebook" : "",
+      "twitter" : "",
+      "activa" : "",
+      "Notificacion" : 
+      [
+        {
+          "id" : 101,
+          "tipo" : "Notificacion amistad",
+          "contador" : "",
+          "visto" : 0
+        }
+      ],
+      "configuracion_perfil": {
+        "notificaciones_correo" : 0,
+        "notificaciones_amistad" : 1,
+        "notificaciones_comentarios" : 1
+        //Faltan campos ...
+      },
+      "relacion": 
+      [
+        {
+          "id": 199, 
+          "tipo_relacion" : "Mejores Amigos",
+          "fecha_inicio_relacion" : "2017/12/01",
+          "privacidad" : "",
+          "estado" : "Rechazado"
+        }
+      ],
+      "chat" : [1235,1254,87],
+      "estados" : [125,128],
+      "voto_estado" : [878,879],
+      "comentarios" : [1001,1005]
     },
     {
       //Otra persona ...
     }
 	],
-  "chats" : [
+  "chats" : 
+  [
     {
       "id" : 1235,
       "fecha_creacion" : "2017/12/02"
@@ -77,6 +152,7 @@
       "id" : 125,
       "fecha_creacion" : "2017/12/02",
       "fecha_modificacion" : "",
+	    "id_usuario" : 199,
       "texto" : "Esto es un estado...",
       "multimedia_url" : "../static/files/199/125/111255.mp4",
       "tipo_multimedia" : "mp4",
@@ -87,16 +163,88 @@
       "voto_estado" : [
         {"id" : 878, "like" : 1, "dislike" : 0, "visualizo" : 1, "reportar_contenido" : 0}
       ],
-      "comentarios" : [
+      "comentarios" : 
+      [
         {
-          "id" : 901, 
-          "fecha_creacion" : "2017/12/03",
-          "texto" : "es un comentario..."
+          "id" : 1001,
+          "id_comentario_principal": -1,
+          "fecha_creacion": "14/08/17 22:16",
+          "id_usuario" : 199,
+          "cant_like" : 28,
+          "cant_dislike" : 3,
+          "respuestas" : 5,
+          "texto": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id" : 1002,
+          "id_comentario_principal": 1,
+          "fecha_creacion": "14/08/17 22:17",
+          "id_usuario" : 200,
+          "cant_like" : 2,
+          "cant_dislike" : 0,
+          "respuestas" : 5,
+          "texto": "consectetur adipiscing elit."
+        },
+        {
+          "id" : 1003,
+          "id_comentario_principal": 1,
+          "fecha_creacion": "14/08/17 22:16",
+          "id_usuario" : 201,
+          "cant_like" : 0,
+          "cant_dislike" : 0,
+          "respuestas" : 0,
+          "texto": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         }
-      ]
+  	  ]
     },
     {
-      "id" : 126
+      "id" : 125,
+      "fecha_creacion" : "2017/12/02",
+      "fecha_modificacion" : "",
+	    "id_usuario" : 199,
+      "texto" : "Esto es un estado...",
+      "multimedia_url" : "../static/files/199/125/111255.mp4",
+      "tipo_multimedia" : "mp4",
+      "cant_like" : 1,
+      "cant_dislike" : 0,
+      "cant_visualizaciones": 1,
+      "privacidad": "Público",
+      "voto_estado" : [
+        {"id" : 878, "like" : 1, "dislike" : 0, "visualizo" : 1, "reportar_contenido" : 0}
+      ],
+      "comentarios" : 
+      [
+        {
+          "id" : 1004,
+          "id_comentario_principal": -1,
+          "fecha_creacion": "14/08/17 22:16",
+          "id_usuario" : 199,
+          "cant_like" : 28,
+          "cant_dislike" : 3,
+          "respuestas" : 5,
+          "texto": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "id" : 1005,
+          "id_comentario_principal": 1,
+          "fecha_creacion": "14/08/17 22:17",
+          "id_usuario" : 200,
+          "cant_like" : 2,
+          "cant_dislike" : 0,
+          "respuestas" : 5,
+          "texto": "consectetur adipiscing elit."
+        },
+        {
+          "id" : 1006,
+          "id_comentario_principal": 1,
+          "fecha_creacion": "14/08/17 22:16",
+          "id_usuario" : 201,
+          "cant_like" : 0,
+          "cant_dislike" : 0,
+          "respuestas" : 0,
+          "texto": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        }
+      ]
     }
   ]
 }
