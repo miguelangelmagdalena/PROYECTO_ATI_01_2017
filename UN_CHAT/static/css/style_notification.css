@@ -1,0 +1,20 @@
+.main{
+	margin-top: 60px;
+}
+
+.notifications{
+	height: 450px;
+	overflow-y: scroll;
+}
+
+.notification{
+	background: #dddfe2;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 5px;
+}
+
+.message{
+	overflow-x: hidden;
+	overflow-y: hidden;
+}

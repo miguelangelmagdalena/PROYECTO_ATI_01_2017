@@ -1,0 +1,57 @@
+.main{
+	margin-top: 60px;
+}
+
+.list-friend{
+	padding:0;
+	height: 450px;
+	overflow-y: scroll;
+}
+
+.list-friend::-webkit-scroll{
+	background: transparent;
+}
+
+.list-friend li {
+	list-style:none;
+	color: black;
+	cursor: pointer;
+	font-family: Arial;
+	height: 30px;
+	overflow-x: hidden;
+}
+
+.list-friend img {
+	margin-right: 10px;
+}
+
+.list-friend li:hover{
+	background: rgb(204,204,204);
+}
+
+.history-chat{
+	height: 350px;
+	background:#e9ebee;
+	overflow-y: scroll;
+}
+
+.user{
+	font-weight: 700;
+	text-decoration: underline;
+	color: #0E2656;
+}
+
+#mensaje{
+	width: 100%;
+	resize: none;
+}
+
+#search-friend{
+	margin-left: 10px;
+}
+
+@media (max-width: 768px){
+	.history-chat{
+	height: 200px;
+		}
+}
