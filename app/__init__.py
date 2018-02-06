@@ -1,5 +1,5 @@
 # Import flask and template operators
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
 
 # Import pymongo para usar mongodb
 from pymongo import MongoClient
@@ -9,6 +9,9 @@ from bson.objectid import ObjectId
 
 # Define the WSGI application object
 app = Flask(__name__)
+
+# Para usar session
+app.secret_key = 'any random string'
 
 # Configurations
 app.config.from_object('config')
@@ -21,13 +24,21 @@ client = MongoClient('localhost',27017)
 db = client.redparaati
 
 #Select collections:
-	#usuarios = db.usuarios
-	#estados  = db.estados
+db_usuarios = db.usuarios
+db_estados  = db.estados
+db_chats 	= db.chats
+
 
 # Sample HTTP error handling
 @app.errorhandler(404)
 def not_found(error):
     return render_template('404.html')
+
+@app.route('/drop')
+def drop_database():
+#Borramos la base de datos
+	client.drop_database('redparaati')
+	return 'Base de datos MongoDB borrada'
 
 # Import a module / component using its blueprint handler variable (mod_auth)
 from app.mod_authentication.controllers import mod_authentication

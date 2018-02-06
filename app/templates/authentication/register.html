@@ -4,9 +4,15 @@
   <title>Red ParaATI</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/bootstrap-3.3.7/bootstrap.min.css')}}" >
+  <script src="{{ url_for('static',filename='vendor/js/jquery-3.2.1.min.js')}}"></script>
+  <script src="{{ url_for('static',filename='vendor/bootstrap-3.3.7/bootstrap.min.js')}}"></script>
+  <!--
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  -->
 </head>
 <body style = "background-color: white;">
 
@@ -59,42 +65,38 @@
   <a href='#'><img class =img-responsive src="../../static/img/btwitter.png" class="img-rounded" alt="twitterbutton"> </a>
   </div>
 
-  <form>
+  <form action="{{ url_for('authentication.new_register') }}" method="post">
   
-  <div class = "form-group">
-        <label for="nombre" style = "color: #0000ff;">Nombre: </label>
-        <input type="text" class="form-control" id="name" placeholder=" ESCRIBIR NOMBRE">
+      <div class = "form-group">
+            <label for="nombre" style = "color: #0000ff;">Nombre: </label>
+            <input type="text" class="form-control" id="name" name="name" placeholder=" ESCRIBIR NOMBRE">
 
-    </div>
-	
-	<div class = "form-group">
-        <label for="apellido" style = "color: #0000ff;">Apellido: </label>
-        <input type="text" class="form-control" id="lastn" placeholder=" ESCRIBIR APELLIDO">
+      </div>
+    	
+      <div class = "form-group">
+            <label for="correo" style = "color: #0000ff;">Correo: </label>
+            <input type="text" class="form-control" id="usr" name="email" placeholder=" ESCRIBIR CORREO">
 
-    </div>
-	
-    <div class = "form-group">
-        <label for="correo" style = "color: #0000ff;">Correo: </label>
-        <input type="text" class="form-control" id="usr" placeholder=" ESCRIBIR CORREO">
+      </div>
 
-    </div>
+      <div class = "form-group">
 
-    <div class = "form-group">
+            <label for="pass" style = "color: #0000ff;"> Contraseña: </label>
+            <input type="password" class="form-control" id="pass" name="password" placeholder=" ESCRIBIR CONTRASEÑA">
 
-        <label for="pass" style = "color: #0000ff;"> Contraseña: </label>
-        <input type="password" class="form-control" id="pass" placeholder=" ESCRIBIR CONTRASEÑA">
+      </div>
+    	
+    	<div class = "form-group">
 
-    </div>
-	
-	   <div class = "form-group">
+            <label for="conpass" style = "color: #0000ff;"> Confirmar contraseña: </label>
+            <input type="password" class="form-control" id="conpass" name="password2" placeholder=" CONFIRMAR CONTRASEÑA">
 
-        <label for="conpass" style = "color: #0000ff;"> Confirmar contraseña: </label>
-        <input type="password" class="form-control" id="conpass" placeholder=" CONFIRMAR CONTRASEÑA">
+      </div>
 
-    </div>
+     <button type="submit" class="btn btn-info">Registrar</button> </br></br>
   </form>
 
-  <button type="button" class="btn btn-info">Registrar</button> </br></br>
+ 
 
 
 

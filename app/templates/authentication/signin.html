@@ -4,9 +4,17 @@
   <title>Red ParaATI</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/bootstrap-3.3.7/bootstrap.min.css')}}" >
+  <script src="{{ url_for('static',filename='vendor/js/jquery-3.2.1.min.js')}}"></script>
+  <script src="{{ url_for('static',filename='vendor/bootstrap-3.3.7/bootstrap.min.js')}}"></script>
+  <!--
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  -->
+
 </head>
 <body style = "background-color: white;">
 
@@ -51,28 +59,29 @@
   <h1 style ="text-align: center; color: #0000ff;">Red ParATI</h1>
 
 
-  <form>
+  <form action = "{{ url_for('authentication.login') }}" method="post">
     <div class = "form-group">
         <label for="correo" style = "color: #0000ff;">Correo: </label>
-        <input type="text" class="form-control" id="usr" placeholder=" ESCRIBIR CORREO">
+        <input type="text" class="form-control" id="usr" name="email" placeholder=" ESCRIBIR CORREO">
 
     </div>
 
     <div class = "form-group">
 
         <label for="pass" style = "color: #0000ff;"> Contraseña: </label>
-        <input type="password" class="form-control" id="pass" placeholder=" ESCRIBIR CONTRASEÑA">
+        <input type="password" class="form-control" id="pass" name="password" placeholder=" ESCRIBIR CONTRASEÑA">
 
     </div>
+    <button type="submit" class="btn btn-info">Ingresar</button></br>
   </form>
 
-  <button type="button" class="btn btn-info">Ingresar</button></br>
+  
 
   
   <a href="#">Olvidé mi contraseña</a><br>
 
   <div>
-  <a href="register.html">Regístrate </a><br>
+  <a href="{{ url_for('authentication.register') }}">Regístrate </a><br>
   <div/>
 
   <div>

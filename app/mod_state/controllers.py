@@ -1,8 +1,8 @@
 # Import flask dependencies
-from flask import Blueprint, request, render_template
+from flask import Blueprint, request, render_template, session, flash, url_for
 
 # Import the database object from the main app module
-from app import db
+	#from app import db
 
 # Importamos APP para definir la pagina princial
 from app import app
@@ -19,6 +19,9 @@ mod_state = Blueprint('state', __name__, url_prefix='/state')
 def state_index():
 
     # If sign in form is submitted
+    if 'name' in session:
+    	return render_template("state/index.html")
+    	
+    return render_template("authentication/signin.html")
+    
 
-    # Verify the sign in form
-    return render_template("state/index.html")
