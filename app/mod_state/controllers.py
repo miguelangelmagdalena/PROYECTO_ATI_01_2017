@@ -1,5 +1,5 @@
 # Import flask dependencies
-from flask import Blueprint, request, render_template, session, flash, url_for
+from flask import Blueprint, request, render_template, session, url_for, flash
 
 # Import the database object from the main app module
 	#from app import db
@@ -21,7 +21,7 @@ def state_index():
     # If sign in form is submitted
     if 'name' in session:
     	return render_template("state/index.html")
-    	
+
     return render_template("authentication/signin.html")
     
 

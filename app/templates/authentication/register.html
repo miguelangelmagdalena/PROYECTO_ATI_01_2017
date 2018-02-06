@@ -57,6 +57,11 @@
   <h1 style ="text-align: center; color: #0000ff;">Red ParATI</h1></br>
   <h2 style ="text-align: center; color: #0000ff;">Registrate!</h2></br>
 
+  {% if error %}
+  <span class="label label-danger">Error: {{ error }}</span>
+  {% endif %}
+
+
    <div>
   <a href='#'> <img class =img-responsive src="../../static/img/bface.png" class="img-rounded" alt="facebookbutton"> </a>
   </div></br>
@@ -64,6 +69,8 @@
   <div>
   <a href='#'><img class =img-responsive src="../../static/img/btwitter.png" class="img-rounded" alt="twitterbutton"> </a>
   </div>
+
+
 
   <form action="{{ url_for('authentication.new_register') }}" method="post">
   

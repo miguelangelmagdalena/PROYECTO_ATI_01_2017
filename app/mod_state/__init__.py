@@ -1,7 +1,12 @@
-{
-	"usuarios" : 
-  [
-		{
+# Import the database object (db) from the main application module
+from app import client
+from app import db, db_usuarios, db_estados, db_chats
+
+#Borramos toda la base de datos al principio
+client.drop_database('redparaati')
+
+usuarios_prueba = [
+	{
       "id" : 1,
       "password" : "1234",
       "email" : "miguel@gmail.com",
@@ -98,29 +103,18 @@
       ],
       "estados" : [105],
       "voto_estado" : [],
-      "comentarios" : [1003,1007]
-    },
-    
-    {
-      //Otra persona ...
+      "comentarios" : [1003, 1007]
     }
-	],
-  "chats" : 
-  [
-    {
-      "id" : 1235,
-      "fecha_creacion" : "2017/12/02"
-    },
-    {
-      "id" : 1254
-    }
-  ],
-  "estados" : [
+]
+
+
+
+estados = [
     {
       "id" : 100,
       "fecha_creacion" : "2017/12/02",
       "fecha_modificacion" : "",
-	    "id_usuario" : 1,
+      "id_usuario" : 1,
       "texto" : "Esto es un estado...",
       "multimedia_url" : "../../static/images/probando (1).jpg",
       "tipo_multimedia" : "jpg",
@@ -163,7 +157,7 @@
           "respuestas" : 0,
           "texto": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         }
-  	  ]
+      ]
     },
     {
       "id" : 102,
@@ -194,5 +188,7 @@
         }
       ]
     }
-  ]
-}
+]
+
+db_usuarios.insert_many(usuarios_prueba)
+db_estados.insert_many(estados)

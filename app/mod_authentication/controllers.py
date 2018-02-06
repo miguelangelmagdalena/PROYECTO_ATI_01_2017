@@ -1,5 +1,5 @@
 # Import flask dependencies
-from flask import Blueprint, request, render_template, session, url_for
+from flask import Blueprint, request, render_template, session, url_for, flash
 
 # Import the database object from the main app module
 from app import db, db_usuarios
@@ -19,24 +19,28 @@ mod_state = Blueprint('state', __name__, url_prefix='/state')
 # Set the route and accepted methods
 @mod_authentication.route('/')
 @mod_authentication.route('/signin/')
-def signin():
-
-    return render_template("authentication/signin.html")
+def signin(error):
+	if error == None:
+		return render_template("authentication/signin.html")
+	return render_template("authentication/signin.html", error=error)
 
 @mod_authentication.route('/login', methods=['GET', 'POST'])
 def login():
-	
+	error = None
+
 	user = db_usuarios
 	existing_user = user.find_one({'email' : request.form['email']})
 
 	if existing_user:
 		if (request.form['password'] == existing_user['password']):
-			session['name'] = existing_user['nombre']
-			session['email'] = existing_user['email']
+			session['name'] 	= existing_user['nombre']
+			session['email'] 	= existing_user['email']
 			session['password'] = existing_user['password']
 			return state_index()
+		error = 'Datos invalidos'
+	error = 'Datos invalidos'
 	
-	return signin()
+	return signin(error)
 
 @mod_authentication.route('/register', methods=['GET', 'POST'])
 def register():
@@ -46,6 +50,7 @@ def register():
 @mod_authentication.route('/new_register', methods=['GET', 'POST'])
 def new_register():
 #Para registrar un nuevo usuario en la BD
+	error = None
 
 	if request.method == 'POST':
 		user = db_usuarios
@@ -67,9 +72,9 @@ def new_register():
 			session['password'] = hashpass
 			return state_index()
 
-		return 'El correo ya existe!'
+		error = 'El correo ya existe!'
 
-	return render_template("authentication/register.html")
+	return render_template("authentication/register.html", error=error)
 
 @mod_authentication.route('/logout/', methods=['GET', 'POST'])
 @mod_state.route('/logout/')

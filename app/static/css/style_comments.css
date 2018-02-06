@@ -1,0 +1,15 @@
+/**************Estructura de los comentarios********************/
+.comment-body {
+    text-align: justify !important;
+}
+h6.small.comment-meta {
+    text-align: left;
+}
+.comentar{
+	width: 100%;
+	overflow-x: hidden; 
+	border-radius: 10px;  
+}
+.comentar2{
+	text-align: right;
+}

@@ -5,6 +5,7 @@
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/css/bootstrap.min.css')}}" >
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/css/font-awesome.min.css')}}" >
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style_comments.css')}}">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style_navegation_bar.css')}}">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style_base_container.css')}}">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style_lateral_chat.css')}}">
@@ -15,6 +16,7 @@
   <script src="{{ url_for('static',filename='vendor/js/popper.min.js')}}"></script>
   <script src="{{ url_for('static',filename='vendor/js/tooltip.min.js')}}"></script>
   <script src="{{ url_for('static',filename='vendor/js/bootstrap.min.js')}}"></script>
+
   <script src="{{ url_for('static',filename='js/control_modulo_estado.js')}}"></script> 
 
   <script type="text/javascript" src="{{ url_for('static',filename='js/datos_ejemplo_prototipo.json')}}"></script> <!--Data de publicaciones -->
@@ -55,7 +57,7 @@
               </a>
               
               <div class="publicar_boton" data-toggle="modal" href="#myModal">              
-                ¿En que estas pensando?
+                ¿En que estas pensando {{ session['name']}}?
               </div>
 
               <div class="publicar_upload">
@@ -74,7 +76,7 @@
                   <a href="index.html">
                     <img class="publicacion_foto_miniatura" src="../../static/images/perfil (1).jpg"> 
                   </a>
-                  <h5 class="publicar_modal modal-title" >Pepe Fernandez</h5>
+                  <h5 class="publicar_modal modal-title" >{{ session['name']}}</h5>
                   <div class="publicar_privacidad_select form-group">
                     <select class="publicar_privacidad_select2 form-control" id="sel1">
                       <option class="publicar_privacidad_select2">&#xf0ac; Público</option>
@@ -139,6 +141,177 @@
           </div>
           </div>
           
+
+
+
+
+          <div class="publicacion shadow border_radius">
+            <div class="publicacion2">
+              <div class="publicacion_barra_nombre">
+                <a href="#">
+                <img class="publicacion_foto_miniatura" src="../../static/images/perfil (3).png"> 
+                </a>
+                <div class="publicacion_nombre ">
+                  <a href="#">
+                    <h2 class="publicacion_nombre2 titulo">Pepe Fernandez</h2>
+                  </a>
+                </div>
+                <div class="dropdown dropup">
+                  <button href="#" class="publicacion_submenu_control_button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                    <h2 class="publicacion_submenu_control titulo">
+                      <i class="fa fa-bars" aria-hidden="true"></i>
+                    </h2>
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" x-placement="top-start" >
+                    <a class="dropdown-item" href="#">Editar</a>
+                    <a class="dropdown-item" href="#">Eliminar</a>
+                  </div>
+                </div>
+              </div>
+              <div class="publicacion_barra_texto">
+                <p class="publicacion_texto">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consequat, velit non vulputate ornare, augue metus scelerisque mi, vel hendrerit neque lacus sed sapien. Maecenas nec magna consequat, sagittis mauris a, sollicitudin sem. Vivamus id lorem vehicula elit malesuada pulvinar. Praesent porta interdum elementum. Donec pharetra volutpat tempus. Vivamus sit amet purus eu nunc luctus pulvinar non ut erat. Morbi egestas dolor quis neque facilisis dignissim. Donec ullamcorper bibendum urna.
+                </p>
+                <div class="publicacion_multimedia">
+                  <a href="#"><img class="publicacion_multimedia2" src="../../static/images/perfil (3).png"></a>
+                </div>
+              </div><!-- Barra de opciones de publicacion y comentario -->
+              <div class="publicacion_barra_opciones">
+                <div class="publicacion_opciones flotar_derecha">
+                  <button class="publicacion_opciones_button">
+                    <i class="fa fa-comments" aria-hidden="true"></i><span class="publicacion_opciones_texto comentario_font">0</span>
+                  </button>
+                </div>
+                <div class="publicacion_opciones flotar_derecha">
+                  <button class="publicacion_opciones_button"><i class="fa fa-thumbs-down" aria-hidden="true"></i><span class="publicacion_opciones_texto comentario_font">5 |</span>
+                  </button>
+                </div>
+                <div class="publicacion_opciones flotar_derecha">
+                  <button class="publicacion_opciones_button"><i class="fa fa-thumbs-up" aria-hidden="true"></i> <span class="publicacion_opciones_texto comentario_font">20 |</span>
+                  </button>
+                </div>
+                <div class="publicacion_visto flotar_derecha"><i class="fa fa-eye" aria-hidden="true"></i><span class="publicacion_visto3 comentario_font">40 Visto</span>
+                </div>
+                <div class="publicacion_barra_opciones2">
+                  <div class="fecha1 flotar_izquierda">14/08/17 22:15</div>
+                  <div class="fecha2 flotar_izquierda">(editado 15/08/17 23:15)</div>
+                </div>
+              </div> 
+              <hr>
+
+
+
+
+              <!--********** COMENTARIOS ***** -->
+              <div class="container">
+                <div class="row">
+                    <div class="comments col-md-12" class="comments">
+                        <h3 class="mb-2">Comentarios</h3>
+
+                        <!-- /comment -->
+                        <div class="comment mb-2 row">
+                            <div class="comment-avatar col-md-1 col-sm-2 text-center pr-1">
+                                <a href=""><img class="mx-auto rounded-circle img-fluid" src="http://demos.themes.guide/bodeo/assets/images/users/w102.jpg" alt="avatar"></a>
+                            </div>
+                            <div class="comment-content col-md-11 col-sm-10">
+                                <h6 class="small comment-meta"><a href="#">maslarino</a></h6>
+                                <div class="comment-body">
+                                    <textarea class="input comentar" placeholder="  Agrega un comentario..." rows="4"></textarea >
+                                    <div class="row pt-2">
+                                      <div class="col-12 comentar2">
+                                          <a href="" class="btn btn-sm btn-primary">Comentar</a>
+                                      </div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+
+                        <!-- comment -->
+                        <div class="comment mb-2 row">
+                            <div class="comment-avatar col-md-1 col-sm-2 text-center pr-1">
+                                <a href=""><img class="mx-auto rounded-circle img-fluid" src="http://demos.themes.guide/bodeo/assets/images/users/m103.jpg" alt="avatar"></a>
+                            </div>
+                            <div class="comment-content col-md-11 col-sm-10">
+                                <h6 class="small comment-meta"><a href="#">admin</a> Today, 2:38
+
+                                  <button href="#" class="publicacion_submenu_control_button2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <h2 class="publicacion_submenu_control titulo"><i class="fa fa-bars" aria-hidden="true"></i></h2></button>
+                                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink"><a class="dropdown-item" href="#">Editar</a><a class="dropdown-item" href="#">Eliminar</a></div>
+                                </h6>
+
+                                <div class="comment-body">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <a href>http://wwwwww.com</a> tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+                                        <br>
+                                        <a href="" class="text-right small"><i class="ion-reply"></i> Responder</a>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <!-- reply is indented -->
+                            <div class="comment-reply col-md-11 offset-md-1 col-sm-10 offset-sm-2">
+                                <div class="row">
+                                    <div class="comment-avatar col-md-1 col-sm-2 text-center pr-1">
+                                        <a href=""><img class="mx-auto rounded-circle img-fluid" src="http://demos.themes.guide/bodeo/assets/images/users/m101.jpg" alt="avatar"></a>
+                                    </div>
+                                    <div class="comment-content col-md-11 col-sm-10 col-12">
+                                        <h6 class="small comment-meta"><a href="#">phildownney</a> Today, 12:31
+                                          <button href="#" class="publicacion_submenu_control_button2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <h2 class="publicacion_submenu_control titulo"><i class="fa fa-bars" aria-hidden="true"></i></h2></button>
+                                          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink"><a class="dropdown-item" href="#">Editar</a><a class="dropdown-item" href="#">Eliminar</a></div>
+                                        </h6>
+                                        <div class="comment-body">
+                                            <p>Really?? Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitat.
+                                                <br>
+                                                <a href="" class="text-right small"><i class="ion-reply"></i> Responder</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                           </div>
+                           <!-- /reply is indented -->
+                        </div>
+                        <!-- /comment -->
+                        <!-- comment -->
+                        <div class="comment mb-2 row">
+                            <div class="comment-avatar col-md-1 col-sm-2 text-center pr-1">
+                                <a href=""><img class="mx-auto rounded-circle img-fluid" src="http://demos.themes.guide/bodeo/assets/images/users/w102.jpg" alt="avatar"></a>
+                            </div>
+                            <div class="comment-content col-md-11 col-sm-10">
+                                <h6 class="small comment-meta"><a href="#">maslarino</a> Yesterday, 5:03 PM
+                                  <button href="#" class="publicacion_submenu_control_button2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <h2 class="publicacion_submenu_control titulo"><i class="fa fa-bars" aria-hidden="true"></i></h2></button>
+                                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink"><a class="dropdown-item" href="#">Editar</a><a class="dropdown-item" href="#">Eliminar</a></div>
+                                </h6>
+                                <div class="comment-body">
+                                    <p>Sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+                                        <br>
+                                        <a href="" class="text-right small"><i class="ion-reply"></i> Responder</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+              
+            </div>
+          </div>
+
+
+
+
+
+
+
+
 
           <!-- Aqui se agregará la información dinamicamente -->
 

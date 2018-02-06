@@ -58,6 +58,9 @@
 <div class="container">
   <h1 style ="text-align: center; color: #0000ff;">Red ParATI</h1>
 
+  {% if error %}
+  <span class="label label-danger">Error: {{ error }}</span>
+  {% endif %}
 
   <form action = "{{ url_for('authentication.login') }}" method="post">
     <div class = "form-group">
