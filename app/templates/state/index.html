@@ -53,7 +53,7 @@
           <!--<div id="publicar" class="shadow border_radius" >-->
             <div class="publicar2" >
               <a href="index.html">
-                <img class="publicacion_foto_miniatura" src="../../static/images/perfil (1).jpg"> 
+                <img class="publicacion_foto_miniatura" src="{{ session['ruta_foto_perfil']}}"> 
               </a>
               
               <div class="publicar_boton" data-toggle="modal" href="#myModal">              
@@ -74,7 +74,7 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <a href="index.html">
-                    <img class="publicacion_foto_miniatura" src="../../static/images/perfil (1).jpg"> 
+                    <img class="publicacion_foto_miniatura" src="{{ session['ruta_foto_perfil']}}"> 
                   </a>
                   <h5 class="publicar_modal modal-title" >{{ session['name']}}</h5>
                   <div class="publicar_privacidad_select form-group">
@@ -314,8 +314,8 @@
 
 
           <!-- Aqui se agregará la información dinamicamente -->
-
-          <button id="Superbutton" type="button" title="Ver más" onclick="more_elements_callback(index,increment,max_value)"> Ver más</button>
+          
+          <button id="Superbutton_load" type="button" title="Ver más" > Ver más</button>
           
         </div>
       </div>
