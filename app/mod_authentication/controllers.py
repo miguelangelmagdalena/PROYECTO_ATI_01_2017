@@ -33,9 +33,11 @@ def login():
 
 	if existing_user:
 		if (request.form['password'] == existing_user['password']):
+			session['id'] 		= existing_user['id']
 			session['name'] 	= existing_user['nombre']
 			session['email'] 	= existing_user['email']
 			session['password'] = existing_user['password']
+			session['ruta_foto_perfil'] = existing_user['ruta_foto_perfil']
 			return state_index()
 		error = 'Datos invalidos'
 	error = 'Datos invalidos'
@@ -63,13 +65,16 @@ def new_register():
 			new_user = {
 				"nombre" : request.form['name'],
 				"email" : request.form['email'],
-				"password" : hashpass
+				"password" : hashpass,
+				"ruta_foto_perfil" : "../../static/images/new.png"
 			}
 
 			user.insert_one(new_user)
-			session['name'] = request.form['name']
-			session['email'] = request.form['email']
+			session['id'] 		= 100
+			session['name'] 	= request.form['name']
+			session['email'] 	= request.form['email']
 			session['password'] = hashpass
+			session['ruta_foto_perfil'] = "../../static/images/new.png"
 			return state_index()
 
 		error = 'El correo ya existe!'

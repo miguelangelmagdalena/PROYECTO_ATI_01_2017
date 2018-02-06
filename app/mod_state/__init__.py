@@ -35,7 +35,7 @@ usuarios_prueba = [
           "estado" : "Aceptado"
         }
       ],
-      "estados" : [100,103],
+      "estados" : [100,103,104],
       "voto_estado" : [801,802],
       "comentarios" : [1001,1005]
     },
@@ -68,7 +68,7 @@ usuarios_prueba = [
           "estado" : "Aceptado"
         }
       ],
-      "estados" : [102,104],
+      "estados" : [102,105],
       "voto_estado" : [],
       "comentarios" : [1002,1006]
     },
@@ -164,7 +164,7 @@ estados = [
       "fecha_creacion" : "2017/12/02",
       "fecha_modificacion" : "",
       "id_usuario" : 2,
-      "texto" : "Esto es un estado de 200...",
+      "texto" : "Esto es un estado de 102...",
       "multimedia_url" : "../../static/images/probando (2).jpg",
       "tipo_multimedia" : "jpg",
       "cant_like" : 1,
@@ -186,6 +186,66 @@ estados = [
           "respuestas" : 0,
           "texto": "Lorem ipsum dolor sit amet"
         }
+      ]
+    },
+    {
+      "id" : 103,
+      "fecha_creacion" : "2017/12/02",
+      "fecha_modificacion" : "",
+      "id_usuario" : 1,
+      "texto" : "Esto es un estado 2...",
+      "multimedia_url" : "../../static/images/probando (3).jpg",
+      "tipo_multimedia" : "jpg",
+      "cant_like" : 1,
+      "cant_dislike" : 0,
+      "cant_visualizaciones": 1,
+      "privacidad": "Público",
+      "voto_estado" : [
+        {}
+      ],
+      "comentarios" : 
+      [
+
+      ]
+    },
+    {
+      "id" : 104,
+      "fecha_creacion" : "2017/12/02",
+      "fecha_modificacion" : "",
+      "id_usuario" : 1,
+      "texto" : "Esto es un estado 3...",
+      "multimedia_url" : "../../static/images/probando (3).jpg",
+      "tipo_multimedia" : "jpg",
+      "cant_like" : 1,
+      "cant_dislike" : 0,
+      "cant_visualizaciones": 1,
+      "privacidad": "Público",
+      "voto_estado" : [
+        {}
+      ],
+      "comentarios" : 
+      [
+
+      ]
+    },
+    {
+      "id" : 105,
+      "fecha_creacion" : "2017/12/02",
+      "fecha_modificacion" : "",
+      "id_usuario" : 2,
+      "texto" : "Esto es un estado 102 2...",
+      "multimedia_url" : "../../static/images/probando (1).jpg",
+      "tipo_multimedia" : "jpg",
+      "cant_like" : 1,
+      "cant_dislike" : 0,
+      "cant_visualizaciones": 1,
+      "privacidad": "Público",
+      "voto_estado" : [
+        {}
+      ],
+      "comentarios" : 
+      [
+
       ]
     }
 ]
